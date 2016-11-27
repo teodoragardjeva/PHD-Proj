@@ -1,0 +1,27 @@
+{
+  "menuItems": [
+    
+    {
+      "title": "Dashboard",
+      "url": "Dashboard",
+      "icon": "glyphicon glyphicon-home",
+      "subItems": [
+        {
+          "title": "Tables",
+          "url": "Grid-ui",
+          "icon": "glyphicon glyphicon-th-list"
+        },
+        {
+          "title": "Forms",
+          "url": "Forms-ui",
+          "icon": "glyphicon glyphicon-list-alt"
+        }
+      ]
+    },
+    {
+      "title": "User profile",
+      "url": "User-profile",
+      "icon": "glyphicon glyphicon-user"
+    }
+  ]
+}

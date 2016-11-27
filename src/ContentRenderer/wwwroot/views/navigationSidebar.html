@@ -1,0 +1,22 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <!-- /.navbar-header -->
+	<div class="navbar-default sidebar col-sm-2 paddingLeft0" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+           <tree-view [listItems]="items"></tree-view>
+        </div>
+        <!-- /.sidebar-collapse -->
+    </div>
+</nav>
+<div id="page-wrapper">
+	 <router-outlet></router-outlet>
+</div>
+      

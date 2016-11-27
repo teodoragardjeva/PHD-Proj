@@ -1,0 +1,14 @@
+﻿<table>
+    <thead>
+        <tr>
+            <th *ngFor="let gridTitle of data.configuration.visibleColumns">{{gridTitle}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let gridItem of data.items">
+            <td *ngFor="let gridTitle of data.configuration.visibleColumns">
+                {{gridItem[gridTitle]}}
+            </td>
+        </tr>
+    </tbody>
+</table>
