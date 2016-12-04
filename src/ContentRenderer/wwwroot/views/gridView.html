@@ -1,4 +1,4 @@
-﻿<table>
+﻿<table *ngIf="data !== null && data !== undefined">
     <thead>
         <tr>
             <th *ngFor="let gridTitle of data.configuration.visibleColumns">{{gridTitle}}</th>

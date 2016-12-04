@@ -1,2 +1,17 @@
 ﻿<div>teat</div>
 <grid-ui [data]="data"></grid-ui>
+
+<table>
+    <thead>
+        <tr>
+            <th *ngFor="let gridTitle of data.configuration.VisibleColumns">{{gridTitle}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let gridItem of data.items">
+            <td *ngFor="let gridTitle of data.configuration.VisibleColumns">
+                {{gridItem[gridTitle]}}
+            </td>
+        </tr>
+    </tbody>
+</table>
