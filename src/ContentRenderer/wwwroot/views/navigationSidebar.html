@@ -1,21 +1,12 @@
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
+<div class="row">
+    <div class="col-lg-2 col-md-3 col-sm-4 card-nav" *ngFor="let menuItem of items">
+        <img [src]="iconUrl + menuItem.icon" />
+        <br />
+        <a [routerLink]="[menuItem.subItems && menuItem.subItems.length > 0 ? '#' : menuItem.url]" class="font-size-22 color-black">
+            {{menuItem.title}}
+        </a>
     </div>
-    <!-- /.navbar-header -->
-	<div class="navbar-default sidebar col-sm-2 paddingLeft0" role="navigation">
-        <div class="sidebar-nav navbar-collapse">
-           <tree-view [listItems]="items"></tree-view>
-        </div>
-        <!-- /.sidebar-collapse -->
-    </div>
-</nav>
+</div>
 <div id="page-wrapper">
 	 <router-outlet></router-outlet>
 </div>

@@ -65,4 +65,4 @@ gulp.task('watch.ts', ['ts'], function () {
     return gulp.watch('./wwwroot/appScripts/*.ts', ['ts']);
 });
 
-gulp.task('default', ['scriptsNStyles', 'watch', 'ts', 'sourceMapGenerate']);//, 
+gulp.task('default', ['scriptsNStyles', 'watch', 'ts', 'sourceMapGenerate']);
