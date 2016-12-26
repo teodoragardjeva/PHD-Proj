@@ -19,6 +19,8 @@ const forms_1 = require('./components/forms');
 const dashboard_1 = require('./components/dashboard');
 const treeView_1 = require('./components/treeView');
 const entityTypes_1 = require('./enums/entityTypes');
+const listResolver_1 = require('./helpers/listResolver');
+const webService_1 = require('./services/webService');
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -26,13 +28,14 @@ AppModule = __decorate([
         imports: [platform_browser_1.BrowserModule,
             router_1.RouterModule.forRoot([
                 { path: 'grid-ui', component: list_1.ListElement },
-                { path: 'users', component: list_1.ListElement, data: { type: entityTypes_1.EntityType.User } },
+                { path: 'users', component: list_1.ListElement, data: { type: entityTypes_1.EntityType.User }, resolve: { items: listResolver_1.ListResolver } },
                 { path: 'user-profile', component: userProfile_1.UserProfile },
                 { path: 'forms-ui', component: forms_1.FormsElement },
                 { path: 'dashboard', component: dashboard_1.Dashboard },
                 { path: '', component: dashboard_1.Dashboard },
             ])
         ],
+        providers: [listResolver_1.ListResolver, webService_1.WebService],
         declarations: [menuComponent_1.MenuComponent, grid_1.GridElement, userProfile_1.UserProfile, forms_1.FormsElement, dashboard_1.Dashboard, treeView_1.TreeView, list_1.ListElement],
         bootstrap: [menuComponent_1.MenuComponent],
     }), 

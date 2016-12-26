@@ -1,6 +1,6 @@
 ﻿import {WebService} from '../services/webService';
-import { Router, ActivatedRouteSnapshot, Resolve } from '@angular/router';
-import {Component, Injectable} from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'list-ui',
@@ -8,22 +8,19 @@ import {Component, Injectable} from '@angular/core';
 })
 
 @Injectable()
-export class ListElement implements Resolve<any> {
+export class ListElement implements OnInit {
     data: any;
-    constructor(private _webService: WebService, private router: Router) {
+    constructor(private _webService: WebService,
+        private route: ActivatedRoute,
+        private router: Router) {
 
     }
 
-    resolve(route: ActivatedRouteSnapshot): Promise<any> | boolean {
-        const type: number = +route.data['type'];
-        return this._webService.getGridItem(type).then((result: any) => {
-            if (result) {
-                this.data = result;
-                return result;
-            } else {
-                //this.router.navigate(['/crisis-center']);
-                return false;
-            }
-        });
+    ngOnInit() {
+        this.route.data
+            .subscribe((data: { items: any }) => {
+                this.data = data.items;
+            });
     }
+    
 }

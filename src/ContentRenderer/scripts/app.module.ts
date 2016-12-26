@@ -9,19 +9,22 @@ import {FormsElement} from './components/forms';
 import {Dashboard} from './components/dashboard';
 import {TreeView} from './components/treeView';
 import {EntityType} from './enums/entityTypes';
+import {ListResolver} from './helpers/listResolver';
+import {WebService} from './services/webService';
 
 
 @NgModule({
     imports: [BrowserModule,
         RouterModule.forRoot([
             { path: 'grid-ui', component: ListElement },
-            { path: 'users', component: ListElement, data: {type: EntityType.User } },
+            { path: 'users', component: ListElement, data: { type: EntityType.User }, resolve: { items: ListResolver} },
             { path: 'user-profile', component: UserProfile },
             { path: 'forms-ui', component: FormsElement },
             { path: 'dashboard', component: Dashboard },
             { path: '', component: Dashboard },
         ])
     ],
+    providers: [ListResolver, WebService],
     declarations: [MenuComponent, GridElement, UserProfile, FormsElement, Dashboard, TreeView, ListElement],
     bootstrap: [MenuComponent],
    

@@ -9,24 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const webService_1 = require('../services/webService');
-const router_1 = require('@angular/router');
 const core_1 = require('@angular/core');
+const router_1 = require('@angular/router');
 let ListElement = class ListElement {
-    constructor(_webService, router) {
+    constructor(_webService, route, router) {
         this._webService = _webService;
+        this.route = route;
         this.router = router;
     }
-    resolve(route) {
-        const type = +route.data['type'];
-        return this._webService.getGridItem(type).then((result) => {
-            if (result) {
-                this.data = result;
-                return result;
-            }
-            else {
-                //this.router.navigate(['/crisis-center']);
-                return false;
-            }
+    ngOnInit() {
+        this.route.data
+            .subscribe((data) => {
+            this.data = data.items;
         });
     }
 };
@@ -36,7 +30,7 @@ ListElement = __decorate([
         templateUrl: '../../views/listView.html'
     }),
     core_1.Injectable(), 
-    __metadata('design:paramtypes', [webService_1.WebService, router_1.Router])
+    __metadata('design:paramtypes', [webService_1.WebService, router_1.ActivatedRoute, router_1.Router])
 ], ListElement);
 exports.ListElement = ListElement;
 

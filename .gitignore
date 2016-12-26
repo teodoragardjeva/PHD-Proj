@@ -1,2 +1,11 @@
  src/ContentRenderer/node_modules/
 src/ContentRenderer/wwwroot/libs/
+src/ContentRenderer/node_modules/serve-static/
+src/ContentRenderer/node_modules/server-destroy/
+src/ContentRenderer/node_modules/serve-index/
+src/ContentRenderer/node_modules/sequencify/
+src/ContentRenderer/node_modules/send/
+src/ContentRenderer/node_modules/semver-diff/
+src/ContentRenderer/node_modules/set-blocking/
+src/ContentRenderer/node_modules/semver/
+src/ContentRenderer/node_modules/rxjs/

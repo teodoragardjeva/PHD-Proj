@@ -13,11 +13,10 @@ export class ListResolver implements Resolve<any> {
         const type: number = +route.data['type'];
         return this._webService.getGridItem(type).then((result: any) => {
             if (result) {
-                this.data = result;
                 return result;
             } else {
                 //this.router.navigate(['/crisis-center']);
-                return false;
+                return [];
             }
         });
     }
