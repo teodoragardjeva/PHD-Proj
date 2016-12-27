@@ -8,23 +8,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
+const core_1 = require('@angular/core');
 let TreeView = class TreeView {
     constructor() {
         console.log('here');
     }
 };
 __decorate([
-    core_1.Input(),
-    __metadata("design:type", Array)
+    core_1.Input(), 
+    __metadata('design:type', Array)
 ], TreeView.prototype, "listItems", void 0);
 TreeView = __decorate([
     core_1.Component({
         selector: 'tree-view',
         templateUrl: '../../views/treeView.html'
-    }),
-    __metadata("design:paramtypes", [])
+    }), 
+    __metadata('design:paramtypes', [])
 ], TreeView);
 exports.TreeView = TreeView;
-
 //# sourceMappingURL=treeView.js.map

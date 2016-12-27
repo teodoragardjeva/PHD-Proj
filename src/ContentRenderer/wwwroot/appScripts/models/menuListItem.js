@@ -7,5 +7,4 @@ class MenuListItem {
     }
 }
 exports.MenuListItem = MenuListItem;
-
 //# sourceMappingURL=menuListItem.js.map

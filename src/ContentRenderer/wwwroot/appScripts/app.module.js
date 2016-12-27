@@ -8,20 +8,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
-const platform_browser_1 = require("@angular/platform-browser");
-const menuComponent_1 = require("./components/menuComponent");
-const masterLayoutComponent_1 = require("./components/masterLayoutComponent");
-const router_1 = require("@angular/router");
-const list_1 = require("./components/list");
-const grid_1 = require("./components/grid");
-const userProfile_1 = require("./components/userProfile");
-const forms_1 = require("./components/forms");
-const dashboard_1 = require("./components/dashboard");
-const treeView_1 = require("./components/treeView");
-const entityTypes_1 = require("./enums/entityTypes");
-const listResolver_1 = require("./helpers/listResolver");
-const webService_1 = require("./services/webService");
+const core_1 = require('@angular/core');
+const platform_browser_1 = require('@angular/platform-browser');
+const menuComponent_1 = require('./components/menuComponent');
+const masterLayoutComponent_1 = require('./components/masterLayoutComponent');
+const router_1 = require('@angular/router');
+const list_1 = require('./components/list');
+const grid_1 = require('./components/grid');
+const userProfile_1 = require('./components/userProfile');
+const forms_1 = require('./components/forms');
+const dashboard_1 = require('./components/dashboard');
+const treeView_1 = require('./components/treeView');
+const entityTypes_1 = require('./enums/entityTypes');
+const listResolver_1 = require('./helpers/listResolver');
+const webService_1 = require('./services/webService');
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -39,9 +39,8 @@ AppModule = __decorate([
         providers: [listResolver_1.ListResolver, webService_1.WebService],
         declarations: [masterLayoutComponent_1.MasterLayoutComponent, menuComponent_1.MenuComponent, grid_1.GridElement, userProfile_1.UserProfile, forms_1.FormsElement, dashboard_1.Dashboard, treeView_1.TreeView, list_1.ListElement],
         bootstrap: [masterLayoutComponent_1.MasterLayoutComponent],
-    }),
-    __metadata("design:paramtypes", [])
+    }), 
+    __metadata('design:paramtypes', [])
 ], AppModule);
 exports.AppModule = AppModule;
-
 //# sourceMappingURL=app.module.js.map

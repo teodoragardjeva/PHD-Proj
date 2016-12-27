@@ -1,11 +1,26 @@
-<div class="row">
-    <div class="col-lg-2 col-md-3 col-sm-4 card-nav" *ngFor="let menuItem of items">
+<div>
+    <div class="square background-olive" *ngFor="let menuItem of items">
+        <div class="content">
+            <div class="table">
+                <div class="table-cell">
+                    <img [src]="iconUrl + menuItem.icon" />
+                    <br />
+                    <a [routerLink]="[menuItem.subItems && menuItem.subItems.length > 0 ? '#' : menuItem.url]" class="navigationLink color-white">
+                        {{menuItem.title}}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--<div class="col-lg-2 col-md-3 col-sm-4 col-xs-5 card-nav" *ngFor="let menuItem of items">
         <img [src]="iconUrl + menuItem.icon" />
         <br />
-        <a [routerLink]="[menuItem.subItems && menuItem.subItems.length > 0 ? '#' : menuItem.url]" class="font-size-22 color-black">
+        <a [routerLink]="[menuItem.subItems && menuItem.subItems.length > 0 ? '#' : menuItem.url]" class="navigationLink color-black">
             {{menuItem.title}}
         </a>
-    </div>
+    </div>-->
 </div>
 <div id="page-wrapper">
 	 <router-outlet></router-outlet>

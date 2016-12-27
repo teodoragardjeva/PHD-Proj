@@ -26,11 +26,6 @@
     display: inline-block;
 }
 
-.logo-title {
-    vertical-align: bottom;
-    color: #77b3d4;
-}
-
 .font-size-22 {
     font-size: 22px;
 }
@@ -39,11 +34,138 @@
     color: black !important;
 }
 
+.color-white {
+    color: white;
+}
+
+.padding-left-10 {
+    padding-left: 10px;
+}
+
 .card-nav {
-    height: 100px;
     background: white;
     margin-left: 5px;
     margin-top: 5px;
     text-align: center;
     padding: 14px;
+}
+
+
+.background-olive {
+    background: rgba(3, 169, 167, 1);
+}
+.square {
+    float:left;
+    position: relative;
+    margin-left: 10px;
+    margin-top: 10px;
+    overflow:hidden;
+}
+
+.content {
+    position:absolute;
+    height:80%; /* = 100% - 2*10% padding */
+    width:90%; /* = 100% - 2*5% padding */
+    padding: 10% 5%;
+}
+.table{
+    display:table;
+    height:100%;
+    width:100%;
+}
+.table-cell{
+    display:table-cell;
+    vertical-align:middle;
+    text-align: center;
+    height:100%;
+    width:100%;
+}
+
+
+.logo-title {
+    position: absolute;
+    margin-top: 13px;
+    color: #77b3d4;
+}
+
+.padding-top-10 {
+    padding-top: 10px;
+}
+
+@media (min-width: 1200px) {
+    .navigationLink {
+        font-size: 22px;
+    }
+
+    .square {
+         width: 5%;
+        padding-bottom : 5%; /* = width for a 1:1 aspect ratio */
+    }
+
+    .logo-title {
+        font-size: 30px;
+    }
+    
+    .logo-container {
+        padding: 10px 10px 10px 10px;
+    }
+}
+@media (min-width: 768px) {
+    .navigationLink {
+        font-size: 18px;
+    }
+    .square {
+         width: 15%;
+        padding-bottom : 15%; /* = width for a 1:1 aspect ratio */
+    }
+    
+    .logo-title {
+        font-size: 26px;
+    }
+    .square img {
+        height: 40px;
+    }
+    
+    .logo-container {
+        padding: 10px 10px 10px 10px;
+    }
+
+}
+@media (max-width: 767px) {
+    .navigationLink {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .square {
+         width: 20%;
+        padding-bottom : 20%; /* = width for a 1:1 aspect ratio */
+    }
+    
+    .square img {
+        height: 36px;
+    }
+
+    .logo-title {
+        font-size: 22px;
+    }
+    
+    .logo-container {
+        padding: 5px 10px 5px 10px;
+    }
+}
+
+
+@media (max-width: 467px) {
+    .navigationLink {
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .square {
+        width: 29%;
+        padding-bottom : 29%; /* = width for a 1:1 aspect ratio */
+    }
+    .logo-container {
+        padding: 5px 10px 5px 10px;
+    }
 }

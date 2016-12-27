@@ -12,6 +12,8 @@ import {TreeView} from './components/treeView';
 import {EntityType} from './enums/entityTypes';
 import {ListResolver} from './helpers/listResolver';
 import {WebService} from './services/webService';
+import {TranslationService} from './services/translationService';
+import {TranslatePipe} from './pipes/translationPipe';
 
 @NgModule({
     imports: [BrowserModule,
@@ -24,8 +26,8 @@ import {WebService} from './services/webService';
             { path: '', component: MenuComponent },
         ])
     ],
-    providers: [ListResolver, WebService],
-    declarations: [MasterLayoutComponent, MenuComponent, GridElement, UserProfile, FormsElement, Dashboard, TreeView, ListElement],
+    providers: [ListResolver, WebService, TranslationService],
+    declarations: [MasterLayoutComponent, MenuComponent, GridElement, UserProfile, FormsElement, Dashboard, TreeView, ListElement, TranslatePipe],
     bootstrap: [MasterLayoutComponent],
    
 })

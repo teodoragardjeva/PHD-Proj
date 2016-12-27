@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const webService_1 = require("../services/webService");
-const core_1 = require("@angular/core");
-const router_1 = require("@angular/router");
+const webService_1 = require('../services/webService');
+const core_1 = require('@angular/core');
+const router_1 = require('@angular/router');
 let ListElement = class ListElement {
     constructor(_webService, route, router) {
         this._webService = _webService;
@@ -29,11 +29,8 @@ ListElement = __decorate([
         selector: 'list-ui',
         templateUrl: '../../views/listView.html'
     }),
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [webService_1.WebService,
-        router_1.ActivatedRoute,
-        router_1.Router])
+    core_1.Injectable(), 
+    __metadata('design:paramtypes', [webService_1.WebService, router_1.ActivatedRoute, router_1.Router])
 ], ListElement);
 exports.ListElement = ListElement;
-
 //# sourceMappingURL=list.js.map
