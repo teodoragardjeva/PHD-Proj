@@ -6,8 +6,8 @@ import {OnInit} from '@angular/core';
 import {GridElement} from './grid';
 import {UserProfile} from './userProfile';
 import {FormsElement} from './forms';
-import {Dashboard} from './dashboard';
 import { RouterModule } from '@angular/router';
+import {Configurations} from '../helpers/globals';
 
 
 
@@ -20,6 +20,7 @@ import { RouterModule } from '@angular/router';
     
 export class MenuComponent implements OnInit {
     items: MenuListItem[];
+    iconUrl:string = Configurations.serviceUrl + 'elements/icon/';
     constructor(private _webService: WebService) {
 
     }

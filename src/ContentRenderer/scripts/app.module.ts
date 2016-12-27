@@ -1,6 +1,7 @@
 ﻿import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MenuComponent} from './components/menuComponent';
+import {MasterLayoutComponent} from './components/masterLayoutComponent';
 import { RouterModule }   from '@angular/router';
 import {ListElement} from './components/list';
 import {GridElement} from './components/grid';
@@ -12,7 +13,6 @@ import {EntityType} from './enums/entityTypes';
 import {ListResolver} from './helpers/listResolver';
 import {WebService} from './services/webService';
 
-
 @NgModule({
     imports: [BrowserModule,
         RouterModule.forRoot([
@@ -20,13 +20,13 @@ import {WebService} from './services/webService';
             { path: 'users', component: ListElement, data: { type: EntityType.User }, resolve: { items: ListResolver} },
             { path: 'user-profile', component: UserProfile },
             { path: 'forms-ui', component: FormsElement },
-            { path: 'dashboard', component: Dashboard },
-            { path: '', component: Dashboard },
+            { path: 'dashboard', component: MenuComponent },
+            { path: '', component: MenuComponent },
         ])
     ],
     providers: [ListResolver, WebService],
-    declarations: [MenuComponent, GridElement, UserProfile, FormsElement, Dashboard, TreeView, ListElement],
-    bootstrap: [MenuComponent],
+    declarations: [MasterLayoutComponent, MenuComponent, GridElement, UserProfile, FormsElement, Dashboard, TreeView, ListElement],
+    bootstrap: [MasterLayoutComponent],
    
 })
 
