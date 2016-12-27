@@ -1,1 +1,1 @@
-{"version":3,"file":"globals.js","sourceRoot":"","sources":["../../../scripts/helpers/globals.ts"],"names":[],"mappings":";AAAA;AAGA,CAAC;AADU,yBAAU,GAAG,6BAA6B,CAAC;AAFzC,sBAAc,iBAG1B,CAAA"}
+{"version":3,"sources":["../../scripts/helpers/globals.ts"],"names":[],"mappings":";AAAA;;AAEW,yBAAU,GAAG,6BAA6B,CAAC;AAFtD,wCAGC","file":"helpers/globals.js","sourcesContent":["export class Configurations {\r\n   \r\n    static serviceUrl = \"http://localhost:54400/api/\";\r\n}"],"sourceRoot":"/source/"}

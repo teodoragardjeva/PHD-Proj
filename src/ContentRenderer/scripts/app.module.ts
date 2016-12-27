@@ -27,7 +27,8 @@ import {TranslatePipe} from './pipes/translationPipe';
         ])
     ],
     providers: [ListResolver, WebService, TranslationService],
-    declarations: [MasterLayoutComponent, MenuComponent, GridElement, UserProfile, FormsElement, Dashboard, TreeView, ListElement, TranslatePipe],
+    declarations: [TranslatePipe, MasterLayoutComponent, MenuComponent, GridElement, UserProfile, FormsElement,
+        Dashboard, TreeView, ListElement],
     bootstrap: [MasterLayoutComponent],
    
 })

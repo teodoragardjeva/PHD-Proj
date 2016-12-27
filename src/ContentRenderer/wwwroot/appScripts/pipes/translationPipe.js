@@ -9,18 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require("@angular/core");
-let UserProfile = class UserProfile {
-    constructor() {
-        console.log('here');
+const translationService_1 = require("../services/translationService");
+let TranslatePipe = class TranslatePipe {
+    constructor(_translateService) {
+        this._translateService = _translateService;
+    }
+    transform(value, args) {
+        if (!value)
+            return;
+        return this._translateService.translate(value);
     }
 };
-UserProfile = __decorate([
-    core_1.Component({
-        selector: 'user-profile',
-        template: '<div>user data</div>'
+TranslatePipe = __decorate([
+    core_1.Pipe({
+        name: 'translate',
     }),
-    __metadata("design:paramtypes", [])
-], UserProfile);
-exports.UserProfile = UserProfile;
+    __metadata("design:paramtypes", [translationService_1.TranslationService])
+], TranslatePipe);
+exports.TranslatePipe = TranslatePipe;
 
-//# sourceMappingURL=userProfile.js.map
+//# sourceMappingURL=translationPipe.js.map

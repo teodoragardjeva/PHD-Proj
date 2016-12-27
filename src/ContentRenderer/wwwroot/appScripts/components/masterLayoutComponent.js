@@ -8,15 +8,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
+const core_1 = require("@angular/core");
 let MasterLayoutComponent = class MasterLayoutComponent {
 };
 MasterLayoutComponent = __decorate([
     core_1.Component({
         selector: 'main-view',
         templateUrl: "../../views/masterLayout.html"
-    }), 
-    __metadata('design:paramtypes', [])
+    }),
+    __metadata("design:paramtypes", [])
 ], MasterLayoutComponent);
 exports.MasterLayoutComponent = MasterLayoutComponent;
+
 //# sourceMappingURL=masterLayoutComponent.js.map

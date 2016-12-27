@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
+const core_1 = require("@angular/core");
 let Dashboard = class Dashboard {
     constructor() {
         console.log('here');
@@ -18,8 +18,9 @@ Dashboard = __decorate([
     core_1.Component({
         selector: 'dashboard',
         template: '<div>dashboard</div>'
-    }), 
-    __metadata('design:paramtypes', [])
+    }),
+    __metadata("design:paramtypes", [])
 ], Dashboard);
 exports.Dashboard = Dashboard;
+
 //# sourceMappingURL=dashboard.js.map
