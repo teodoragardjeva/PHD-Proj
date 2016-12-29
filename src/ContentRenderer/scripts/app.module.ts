@@ -14,6 +14,8 @@ import {ListResolver} from './helpers/listResolver';
 import {WebService} from './services/webService';
 import {TranslationService} from './services/translationService';
 import {TranslatePipe} from './pipes/translationPipe';
+import {FilterByFieldPipe} from './pipes/fieldFilterPipe';
+import {SharedNavigationService} from './services/sharedNavigationService';
 
 @NgModule({
     imports: [BrowserModule,
@@ -26,8 +28,8 @@ import {TranslatePipe} from './pipes/translationPipe';
             { path: '', component: MenuComponent },
         ])
     ],
-    providers: [ListResolver, WebService, TranslationService],
-    declarations: [TranslatePipe, MasterLayoutComponent, MenuComponent, GridElement, UserProfile, FormsElement,
+    providers: [ListResolver, WebService, TranslationService, SharedNavigationService],//SharedNavigationService
+    declarations: [TranslatePipe, FilterByFieldPipe, MasterLayoutComponent, MenuComponent, GridElement, UserProfile, FormsElement,
         Dashboard, TreeView, ListElement],
     bootstrap: [MasterLayoutComponent],
    

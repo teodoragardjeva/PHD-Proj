@@ -24,6 +24,8 @@ const listResolver_1 = require("./helpers/listResolver");
 const webService_1 = require("./services/webService");
 const translationService_1 = require("./services/translationService");
 const translationPipe_1 = require("./pipes/translationPipe");
+const fieldFilterPipe_1 = require("./pipes/fieldFilterPipe");
+const sharedNavigationService_1 = require("./services/sharedNavigationService");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -38,8 +40,8 @@ AppModule = __decorate([
                 { path: '', component: menuComponent_1.MenuComponent },
             ])
         ],
-        providers: [listResolver_1.ListResolver, webService_1.WebService, translationService_1.TranslationService],
-        declarations: [translationPipe_1.TranslatePipe, masterLayoutComponent_1.MasterLayoutComponent, menuComponent_1.MenuComponent, grid_1.GridElement, userProfile_1.UserProfile, forms_1.FormsElement,
+        providers: [listResolver_1.ListResolver, webService_1.WebService, translationService_1.TranslationService, sharedNavigationService_1.SharedNavigationService],
+        declarations: [translationPipe_1.TranslatePipe, fieldFilterPipe_1.FilterByFieldPipe, masterLayoutComponent_1.MasterLayoutComponent, menuComponent_1.MenuComponent, grid_1.GridElement, userProfile_1.UserProfile, forms_1.FormsElement,
             dashboard_1.Dashboard, treeView_1.TreeView, list_1.ListElement],
         bootstrap: [masterLayoutComponent_1.MasterLayoutComponent],
     }),

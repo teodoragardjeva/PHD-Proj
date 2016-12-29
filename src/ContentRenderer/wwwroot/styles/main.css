@@ -54,6 +54,31 @@
 .background-olive {
     background: rgba(3, 169, 167, 1);
 }
+
+.background-olive:hover,
+.background-olive:focus {
+    background: rgba(3, 169, 167, 0.65);
+
+}
+
+.background-blue {
+    background: #00bbd6;
+}
+
+.background-blue:hover,
+.background-blue:focus {
+    background: rgba(0, 187, 214, 0.65);
+
+}
+.background-light-red {
+    background: #ff897d;
+}
+.background-light-red:hover,
+.background-light-red:focus {
+    background: rgba(255, 137, 125, 0.65);
+
+}
+
 .square {
     float:left;
     position: relative;
@@ -92,47 +117,50 @@
     padding-top: 10px;
 }
 
-@media (min-width: 1200px) {
-    .navigationLink {
-        font-size: 22px;
+.margin-left-10 {
+    margin-left: 10px;
+}
+
+.navigation-category {
+    color:rgba(0,0,0,.54) ;
+}
+
+.navigation-link, a.navigation-link:focus, a.navigation-link:hover {
+        text-decoration: none;
     }
 
-    .square {
-         width: 5%;
-        padding-bottom : 5%; /* = width for a 1:1 aspect ratio */
-    }
-
-    .logo-title {
-        font-size: 30px;
-    }
-    
-    .logo-container {
-        padding: 10px 10px 10px 10px;
+@media (min-width: 1000px) {
+    .navigation-link {
+        font-size: 17px !important;
     }
 }
-@media (min-width: 768px) {
-    .navigationLink {
-        font-size: 18px;
+
+@media (min-width: 768px)  {
+    .navigation-link {
+        font-size: 14px;
     }
     .square {
-         width: 15%;
-        padding-bottom : 15%; /* = width for a 1:1 aspect ratio */
+         width: 22%;
+        padding-bottom : 22%; /* = width for a 1:1 aspect ratio */
     }
     
     .logo-title {
         font-size: 26px;
     }
     .square img {
-        height: 40px;
+        height: 36px;
     }
     
     .logo-container {
         padding: 10px 10px 10px 10px;
     }
 
+    .navigation-category {
+        font-size: 20px;
+    }
 }
 @media (max-width: 767px) {
-    .navigationLink {
+    .navigation-link {
         font-size: 14px;
         font-weight: bold;
     }
@@ -153,11 +181,17 @@
     .logo-container {
         padding: 5px 10px 5px 10px;
     }
+
+    .navigation-category {
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
 }
 
 
 @media (max-width: 467px) {
-    .navigationLink {
+    .navigation-link {
         font-size: 12px;
         font-weight: bold;
     }
@@ -169,3 +203,4 @@
         padding: 5px 10px 5px 10px;
     }
 }
+

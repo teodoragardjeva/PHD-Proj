@@ -1,8 +1,11 @@
 "use strict";
 class MenuListItem {
-    constructor(title, url, subItems) {
+    constructor(title, url, icon, navigationTypes, type, subItems) {
         this.title = title;
         this.url = url;
+        this.icon = icon;
+        this.navigationTypes = navigationTypes;
+        this.type = type;
         this.subItems = subItems;
     }
 }
