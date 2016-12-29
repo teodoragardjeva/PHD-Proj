@@ -46,7 +46,7 @@
                         <div class="table-cell">
                             <img [src]="iconUrl + menuItem.icon" />
                             <br />
-                            <a [routerLink]="[menuItem.subItems && menuItem.subItems.length > 0 ? '#' : menuItem.url]" 
+                            <a [routerLink]="[menuItem.subItems && menuItem.subItems.length > 0 ? ('nav-item/' + menuItem.id) : ('items/' + menuItem.url)]" 
                                (click)="selectNavigationItem(menuItem)"
                                class="navigation-link color-white">
                                 {{menuItem.title}}

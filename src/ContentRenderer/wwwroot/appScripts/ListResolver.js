@@ -17,7 +17,7 @@ let ListResolver = class ListResolver {
         this.router = router;
     }
     resolve(route) {
-        const type = +route.data['type'];
+        const type = +route.params['type'];
         return this._webService.getGridItem(type).then((result) => {
             if (result) {
                 return result;

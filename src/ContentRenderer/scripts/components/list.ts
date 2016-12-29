@@ -18,8 +18,8 @@ export class ListElement implements OnInit {
 
     ngOnInit() {
         this.route.data
-            .subscribe((data: { items: any }) => {
-                this.data = data.items;
+            .subscribe((items: any) => {
+                this.data = items;
             });
     }
     

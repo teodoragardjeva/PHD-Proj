@@ -31,7 +31,7 @@ export class MenuComponent implements OnInit {
     }
 
     selectNavigationItem(item: MenuListItem) {
-        this._sharedNavigationService.selectNavigationMenu(item);
+        this._sharedNavigationService.selectNavigationMenu(item.id);
     }
 
     ngOnInit() {
@@ -46,7 +46,7 @@ export class MenuComponent implements OnInit {
                     this.favourites = [];
                 }
 
-                this.items = result;
+                this.items = result.filter(function (item) { return item && !item.parentId});
                 this.recent = result.filter(function (item) { return item && item.navigationTypes !== null && typeof item.navigationTypes !== 'undefined' && item.navigationTypes.indexOf(NavigationType.Recent) > -1 });
                 this.favourites = result.filter(function (item) { return item && item.navigationTypes !== null && typeof item.navigationTypes !== 'undefined' && item.navigationTypes.indexOf(NavigationType.Favourite) > -1 });
             }

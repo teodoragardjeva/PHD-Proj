@@ -10,7 +10,7 @@ export class ListResolver implements Resolve<any> {
     }
 
     resolve(route: ActivatedRouteSnapshot): Promise<any> | any {
-        const type: number = +route.data['type'];
+        const type: number = +route.params['type'];
         return this._webService.getGridItem(type).then((result: any) => {
             if (result) {
                 return result;

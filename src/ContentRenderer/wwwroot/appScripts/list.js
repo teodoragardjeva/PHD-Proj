@@ -19,8 +19,8 @@ let ListElement = class ListElement {
     }
     ngOnInit() {
         this.route.data
-            .subscribe((data) => {
-            this.data = data.items;
+            .subscribe((items) => {
+            this.data = items;
         });
     }
 };

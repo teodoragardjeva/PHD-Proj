@@ -20,7 +20,7 @@ let MenuComponent = class MenuComponent {
         this.iconUrl = globals_1.Configurations.serviceUrl + 'elements/icon/';
     }
     selectNavigationItem(item) {
-        this._sharedNavigationService.selectNavigationMenu(item);
+        this._sharedNavigationService.selectNavigationMenu(item.id);
     }
     ngOnInit() {
         let subscription = this._sharedNavigationService.data.subscribe(value => void (0), error => void (0), () => {
@@ -30,7 +30,7 @@ let MenuComponent = class MenuComponent {
                 this.recent = [];
                 this.favourites = [];
             }
-            this.items = result;
+            this.items = result.filter(function (item) { return item && !item.parentId; });
             this.recent = result.filter(function (item) { return item && item.navigationTypes !== null && typeof item.navigationTypes !== 'undefined' && item.navigationTypes.indexOf(navigationTypes_1.NavigationType.Recent) > -1; });
             this.favourites = result.filter(function (item) { return item && item.navigationTypes !== null && typeof item.navigationTypes !== 'undefined' && item.navigationTypes.indexOf(navigationTypes_1.NavigationType.Favourite) > -1; });
         });

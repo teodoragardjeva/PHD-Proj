@@ -8,32 +8,30 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const webService_1 = require("../services/webService");
 const core_1 = require("@angular/core");
+const sharedNavigationService_1 = require("../services/sharedNavigationService");
+const globals_1 = require("../helpers/globals");
 const router_1 = require("@angular/router");
-let ListElement = class ListElement {
-    constructor(_webService, route, router) {
-        this._webService = _webService;
+let MenuSubItemComponent = class MenuSubItemComponent {
+    constructor(_sharedNavigationService, route, router) {
+        this._sharedNavigationService = _sharedNavigationService;
         this.route = route;
         this.router = router;
+        this.iconUrl = globals_1.Configurations.serviceUrl + 'elements/icon/';
     }
     ngOnInit() {
-        this.route.data
-            .subscribe((items) => {
-            this.data = items;
+        let subscription = this._sharedNavigationService.data.subscribe(value => void (0), error => void (0), () => {
+            this.item = this._sharedNavigationService.getItem(parseInt(this.route.snapshot.params['id'], 10));
         });
     }
 };
-ListElement = __decorate([
+MenuSubItemComponent = __decorate([
     core_1.Component({
-        selector: 'list-ui',
-        templateUrl: '../../views/listView.html'
+        selector: 'menu-sub-item',
+        templateUrl: "../../views/menuSubItemView.html"
     }),
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [webService_1.WebService,
+    __metadata("design:paramtypes", [sharedNavigationService_1.SharedNavigationService,
         router_1.ActivatedRoute,
         router_1.Router])
-], ListElement);
-exports.ListElement = ListElement;
-
-//# sourceMappingURL=list.js.map
+], MenuSubItemComponent);
+exports.MenuSubItemComponent = MenuSubItemComponent;

@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 const core_1 = require("@angular/core");
 const webService_1 = require("./webService");
 const BehaviorSubject_1 = require("rxjs/BehaviorSubject");
+const helpers_1 = require("../helpers/helpers");
 let SharedNavigationService = class SharedNavigationService {
     constructor(_webService) {
         this._webService = _webService;
@@ -19,12 +20,27 @@ let SharedNavigationService = class SharedNavigationService {
             if (!result) {
                 result = [];
             }
+            this.kvpMenuItems = helpers_1.Helpers.getNavigationTree(result);
             this.data.next(result);
             this.data.complete();
         });
     }
-    selectNavigationMenu(item) {
-        this.selectedMenuItem = item;
+    selectNavigationMenu(id) {
+        let arr = [];
+        let item;
+        while (id > 0) {
+            item = this.kvpMenuItems[id];
+            if (!item) {
+                return;
+            }
+            arr.push({ id: item.id, title: item.title });
+            id = item.parentId;
+        }
+        arr.reverse();
+        this.navigationHistory = arr;
+    }
+    getItem(id) {
+        return !id || isNaN(id) || !this.kvpMenuItems || !this.kvpMenuItems[id] ? null : this.kvpMenuItems[id];
     }
 };
 SharedNavigationService = __decorate([

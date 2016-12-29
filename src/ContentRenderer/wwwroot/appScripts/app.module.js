@@ -19,6 +19,7 @@ const userProfile_1 = require("./components/userProfile");
 const forms_1 = require("./components/forms");
 const dashboard_1 = require("./components/dashboard");
 const treeView_1 = require("./components/treeView");
+const menuSubItemComponent_1 = require("./components/menuSubItemComponent");
 const entityTypes_1 = require("./enums/entityTypes");
 const listResolver_1 = require("./helpers/listResolver");
 const webService_1 = require("./services/webService");
@@ -34,15 +35,17 @@ AppModule = __decorate([
             router_1.RouterModule.forRoot([
                 { path: 'grid-ui', component: list_1.ListElement },
                 { path: 'users', component: list_1.ListElement, data: { type: entityTypes_1.EntityType.User }, resolve: { items: listResolver_1.ListResolver } },
+                { path: 'items/:type', component: list_1.ListElement, resolve: { items: listResolver_1.ListResolver } },
                 { path: 'user-profile', component: userProfile_1.UserProfile },
                 { path: 'forms-ui', component: forms_1.FormsElement },
                 { path: 'dashboard', component: menuComponent_1.MenuComponent },
                 { path: '', component: menuComponent_1.MenuComponent },
+                { path: 'nav-item/:id', component: menuSubItemComponent_1.MenuSubItemComponent },
             ])
         ],
         providers: [listResolver_1.ListResolver, webService_1.WebService, translationService_1.TranslationService, sharedNavigationService_1.SharedNavigationService],
         declarations: [translationPipe_1.TranslatePipe, fieldFilterPipe_1.FilterByFieldPipe, masterLayoutComponent_1.MasterLayoutComponent, menuComponent_1.MenuComponent, grid_1.GridElement, userProfile_1.UserProfile, forms_1.FormsElement,
-            dashboard_1.Dashboard, treeView_1.TreeView, list_1.ListElement],
+            dashboard_1.Dashboard, treeView_1.TreeView, list_1.ListElement, menuSubItemComponent_1.MenuSubItemComponent],
         bootstrap: [masterLayoutComponent_1.MasterLayoutComponent],
     }),
     __metadata("design:paramtypes", [])

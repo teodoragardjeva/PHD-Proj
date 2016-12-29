@@ -9,6 +9,7 @@ import {UserProfile} from './components/userProfile';
 import {FormsElement} from './components/forms';
 import {Dashboard} from './components/dashboard';
 import {TreeView} from './components/treeView';
+import {MenuSubItemComponent} from './components/menuSubItemComponent';
 import {EntityType} from './enums/entityTypes';
 import {ListResolver} from './helpers/listResolver';
 import {WebService} from './services/webService';
@@ -21,16 +22,18 @@ import {SharedNavigationService} from './services/sharedNavigationService';
     imports: [BrowserModule,
         RouterModule.forRoot([
             { path: 'grid-ui', component: ListElement },
-            { path: 'users', component: ListElement, data: { type: EntityType.User }, resolve: { items: ListResolver} },
+            { path: 'users', component: ListElement, data: { type: EntityType.User }, resolve: { items: ListResolver } },
+            { path: 'items/:type', component: ListElement, resolve: { items: ListResolver } },
             { path: 'user-profile', component: UserProfile },
             { path: 'forms-ui', component: FormsElement },
             { path: 'dashboard', component: MenuComponent },
             { path: '', component: MenuComponent },
+            { path: 'nav-item/:id', component: MenuSubItemComponent},
         ])
     ],
     providers: [ListResolver, WebService, TranslationService, SharedNavigationService],//SharedNavigationService
     declarations: [TranslatePipe, FilterByFieldPipe, MasterLayoutComponent, MenuComponent, GridElement, UserProfile, FormsElement,
-        Dashboard, TreeView, ListElement],
+        Dashboard, TreeView, ListElement, MenuSubItemComponent],
     bootstrap: [MasterLayoutComponent],
    
 })
