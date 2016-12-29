@@ -16,6 +16,9 @@
     "@angular/platform-browser-dynamic": "~2.2.0",
     "@angular/router": "~3.2.0",
     "@angular/upgrade": "~2.2.0",
+    "systemjs": "0.19.27",
+    "es6-shim": "^0.35.0",
+    "bootstrap": "^3.3.6",
 
     "angular-in-memory-web-api": "~0.1.15",
     "core-js": "^2.4.1",
