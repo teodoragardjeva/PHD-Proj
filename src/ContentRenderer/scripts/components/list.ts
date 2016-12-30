@@ -18,8 +18,9 @@ export class ListElement implements OnInit {
 
     ngOnInit() {
         this.route.data
-            .subscribe((items: any) => {
-                this.data = items;
+            .subscribe((result: any) => {//according to router definition  resolve: { items: ListResolver }
+                //the result is {items:dataFromWS}, the structure is set in the resolve object
+                this.data = result.items;
             });
     }
     

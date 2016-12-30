@@ -35,12 +35,12 @@ AppModule = __decorate([
             router_1.RouterModule.forRoot([
                 { path: 'grid-ui', component: list_1.ListElement },
                 { path: 'users', component: list_1.ListElement, data: { type: entityTypes_1.EntityType.User }, resolve: { items: listResolver_1.ListResolver } },
-                { path: 'items/:type', component: list_1.ListElement, resolve: { items: listResolver_1.ListResolver } },
+                { path: 'items/:navId/:type', component: list_1.ListElement, resolve: { items: listResolver_1.ListResolver } },
                 { path: 'user-profile', component: userProfile_1.UserProfile },
                 { path: 'forms-ui', component: forms_1.FormsElement },
                 { path: 'dashboard', component: menuComponent_1.MenuComponent },
                 { path: '', component: menuComponent_1.MenuComponent },
-                { path: 'nav-item/:id', component: menuSubItemComponent_1.MenuSubItemComponent },
+                { path: 'nav-item/:navId', component: menuSubItemComponent_1.MenuSubItemComponent },
             ])
         ],
         providers: [listResolver_1.ListResolver, webService_1.WebService, translationService_1.TranslationService, sharedNavigationService_1.SharedNavigationService],

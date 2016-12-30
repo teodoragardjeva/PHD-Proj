@@ -19,8 +19,9 @@ let ListElement = class ListElement {
     }
     ngOnInit() {
         this.route.data
-            .subscribe((items) => {
-            this.data = items;
+            .subscribe((result) => {
+            //the result is {items:dataFromWS}, the structure is set in the resolve object
+            this.data = result.items;
         });
     }
 };

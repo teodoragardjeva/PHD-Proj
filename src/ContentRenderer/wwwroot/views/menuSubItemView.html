@@ -1,21 +1,13 @@
 ﻿<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-    <div>
-        <a [routerLink]="['/nav-item/' + navigationItem.id]"  
-           (click)="_sharedNavigationService.selectNavigationMenu(navigationItem.id)"
-           *ngFor="let navigationItem of _sharedNavigationService.navigationHistory">
-            {{navigationItem.title}}/
-        </a>
-    </div>
-    <div class="row">
-        <div class="margin-left-10 navigation-category">{{item.title}}</div>
+    
+    <div class="row" *ngIf="item">
         <div class="square background-olive" *ngFor="let menuItem of item.subItems">
             <div class="content">
                 <div class="table">
                     <div class="table-cell">
                         <img [src]="iconUrl + menuItem.icon" />
                         <br />
-                        <a [routerLink]="[menuItem.subItems && menuItem.subItems.length > 0 ? ('/nav-item/'+ menuItem.id) : ('/items/' + menuItem.url)]"
-                           (click)="_sharedNavigationService.selectNavigationMenu(menuItem.id)"
+                        <a [routerLink]="[menuItem.subItems && menuItem.subItems.length > 0 ? ('/nav-item/'+ menuItem.id) : ('/items/' + menuItem.id + '/' + menuItem.type)]"
                            class="navigation-link color-white">
                             {{menuItem.title}}
                         </a>

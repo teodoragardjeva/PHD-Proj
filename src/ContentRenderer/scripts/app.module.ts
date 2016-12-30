@@ -23,15 +23,15 @@ import {SharedNavigationService} from './services/sharedNavigationService';
         RouterModule.forRoot([
             { path: 'grid-ui', component: ListElement },
             { path: 'users', component: ListElement, data: { type: EntityType.User }, resolve: { items: ListResolver } },
-            { path: 'items/:type', component: ListElement, resolve: { items: ListResolver } },
+            { path: 'items/:navId/:type', component: ListElement, resolve: { items: ListResolver } },
             { path: 'user-profile', component: UserProfile },
             { path: 'forms-ui', component: FormsElement },
             { path: 'dashboard', component: MenuComponent },
             { path: '', component: MenuComponent },
-            { path: 'nav-item/:id', component: MenuSubItemComponent},
+            { path: 'nav-item/:navId', component: MenuSubItemComponent},
         ])
     ],
-    providers: [ListResolver, WebService, TranslationService, SharedNavigationService],//SharedNavigationService
+    providers: [ListResolver, WebService, TranslationService, SharedNavigationService],
     declarations: [TranslatePipe, FilterByFieldPipe, MasterLayoutComponent, MenuComponent, GridElement, UserProfile, FormsElement,
         Dashboard, TreeView, ListElement, MenuSubItemComponent],
     bootstrap: [MasterLayoutComponent],

@@ -15,12 +15,12 @@ export class WebService {
                         resolve(result);
                     } else {
                         // Something went wrong (404 etc.)
-                        reject(new Error(this.statusText));
+                        reject(new Error(''));
                     }
                 };
                 request.onerror = function () {
                     reject(new Error(
-                        'XMLHttpRequest Error: ' + this.statusText));
+                        'XMLHttpRequest Error: ' + 'this.statusText'));
                 };
                 request.open('GET', url);
                 //request.setRequestHeader('Access-Control-Allow-Headers', '*');

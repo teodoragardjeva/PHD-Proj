@@ -29,11 +29,6 @@ export class MenuComponent implements OnInit {
     constructor(private _webService: WebService, private _sharedNavigationService: SharedNavigationService) {
 
     }
-
-    selectNavigationItem(item: MenuListItem) {
-        this._sharedNavigationService.selectNavigationMenu(item.id);
-    }
-
     ngOnInit() {
         let subscription = this._sharedNavigationService.data.subscribe(
             value => void (0),

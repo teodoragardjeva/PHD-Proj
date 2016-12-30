@@ -19,9 +19,6 @@ let MenuComponent = class MenuComponent {
         this._sharedNavigationService = _sharedNavigationService;
         this.iconUrl = globals_1.Configurations.serviceUrl + 'elements/icon/';
     }
-    selectNavigationItem(item) {
-        this._sharedNavigationService.selectNavigationMenu(item.id);
-    }
     ngOnInit() {
         let subscription = this._sharedNavigationService.data.subscribe(value => void (0), error => void (0), () => {
             let result = this._sharedNavigationService.data.getValue();

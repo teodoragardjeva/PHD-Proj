@@ -25,7 +25,7 @@ export class MenuSubItemComponent implements OnInit {
             value => void (0),
             error => void (0),
             () => {
-                this.item = this._sharedNavigationService.getItem(parseInt(this.route.snapshot.params['id'], 10));
+                this.item = this._sharedNavigationService.getItem(parseInt(this.route.snapshot.params['navId'], 10));
             }
         );
 
