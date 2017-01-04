@@ -40,9 +40,10 @@ let MasterLayoutComponent = class MasterLayoutComponent {
 MasterLayoutComponent = __decorate([
     core_1.Component({
         selector: 'main-view',
-        templateUrl: "../../views/masterLayout.html"
+        templateUrl: "../../views/masterLayout.html",
     }), 
     __metadata('design:paramtypes', [sharedNavigationService_1.SharedNavigationService, router_1.Router, router_1.ActivatedRoute])
 ], MasterLayoutComponent);
 exports.MasterLayoutComponent = MasterLayoutComponent;
+
 //# sourceMappingURL=masterLayoutComponent.js.map

@@ -5,4 +5,5 @@
     NavigationType[NavigationType["All"] = 3] = "All";
 })(exports.NavigationType || (exports.NavigationType = {}));
 var NavigationType = exports.NavigationType;
+
 //# sourceMappingURL=navigationTypes.js.map

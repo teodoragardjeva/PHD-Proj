@@ -1,22 +1,41 @@
 ﻿import {WebService} from '../services/webService';
-import {Component, Injectable, OnInit, OnDestroy} from '@angular/core';
+import {Component, Injectable, OnInit, OnDestroy, trigger, transition, animate} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import {Observable} from 'rxjs/Observable';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import {GridConfiguration} from '../models/gridConfiguration';
 
 @Component({
     selector: 'list-ui',
-    templateUrl: '../../views/listView.html'
+    templateUrl: '../../views/listView.html',
+    host: {
+        '[@routeAnimation]': "true"
+    },
+    animations: [
+        trigger('routeAnimation', [
+            transition('* => void', animate('100ms ease-in')),
+            transition('void => *', animate('100ms ease-out'))  // For next page
+        ])
+    ]
 })
 
 @Injectable()
 export class ListElement implements OnInit, OnDestroy {
-    data: any;
-    subscription: Subscription;
+    data: GridConfiguration;
+    private subscription: Subscription;
+    search: string;
 
     constructor(private _webService: WebService,
         private route: ActivatedRoute,
         private router: Router) {
 
+    }
+
+    searchItems(newVal) {
+        this._webService.getItems(+this.route.snapshot.params['type'], this.search).then((result: Object[]) => {
+            this.data.items = result;
+        });
     }
 
     ngOnInit() {

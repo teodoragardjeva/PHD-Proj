@@ -14,4 +14,5 @@ class MenuListItem extends navigationItem_1.NavigationItem {
     }
 }
 exports.MenuListItem = MenuListItem;
+
 //# sourceMappingURL=menuListItem.js.map

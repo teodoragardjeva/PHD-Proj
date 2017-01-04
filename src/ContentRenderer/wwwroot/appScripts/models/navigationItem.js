@@ -4,4 +4,5 @@ class NavigationItem {
     }
 }
 exports.NavigationItem = NavigationItem;
+
 //# sourceMappingURL=navigationItem.js.map

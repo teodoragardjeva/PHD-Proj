@@ -27,7 +27,15 @@
     "zone.js": "^0.6.25"
   },
   "devDependencies": {
+    "typescript": "^1.8.10",
+    "gulp": "^3.9.1",
+    "path": "^0.12.7",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-typescript": "^2.13.1",
+    "typings": "^0.8.1",
+    "gulp-tsc": "^1.1.5",
     "concurrently": "^3.0.0",
     "lite-server": "^2.2.2"
   }
-}
+} 

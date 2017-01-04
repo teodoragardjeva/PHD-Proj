@@ -1,1 +1,1 @@
-{"version":3,"file":"navigationItem.js","sourceRoot":"","sources":["../../../scripts/models/navigationItem.ts"],"names":[],"mappings":";AAAA;IACI,YAAY,EAAU,EAAE,KAAa;IAErC,CAAC;AACL,CAAC;AAJY,sBAAc,iBAI1B,CAAA"}
+{"version":3,"sources":["models/navigationItem.ts"],"names":[],"mappings":";AAAA;IACI,YAAY,EAAU,EAAE,KAAa;IAErC,CAAC;AACL,CAAC;AAJY,sBAAc,iBAI1B,CAAA","file":"models/navigationItem.js","sourcesContent":["export class NavigationItem {\r\n    constructor(id: number, title: string) {\r\n\r\n    }\r\n}"],"sourceRoot":"/source/"}

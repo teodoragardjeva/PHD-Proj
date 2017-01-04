@@ -34,4 +34,5 @@ ListResolver = __decorate([
     __metadata('design:paramtypes', [webService_1.WebService, router_1.Router])
 ], ListResolver);
 exports.ListResolver = ListResolver;
-//# sourceMappingURL=listResolver.js.map
+
+//# sourceMappingURL=ListResolver.js.map

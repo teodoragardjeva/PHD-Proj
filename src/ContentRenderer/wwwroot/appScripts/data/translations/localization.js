@@ -29,4 +29,5 @@ exports.Localization = {
         'bg': 'Колони'
     }
 };
+
 //# sourceMappingURL=localization.js.map

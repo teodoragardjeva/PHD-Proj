@@ -1,12 +1,14 @@
 ﻿<div class="float-right col-xs-12">
-    <button type="button" class="btn btn-sm float-right margin-left-10 padding-top-bottom-6">{{'columns' | translate}}</button>
+    <button type="button" class="btn float-right margin-left-10 list-view-btn">{{'columns' | translate}}</button>
 
-    <button type="button" class="btn btn-sm float-right margin-left-10 padding-top-bottom-6">{{'advanced' | translate}}</button>
+    <button type="button" class="btn float-right margin-left-10 card-view-btn">{{'advanced' | translate}}</button>
+    <button type="button" class="btn float-right margin-left-3 search-btn card-view-btn" (click)="searchItems()"><i class="glyphicon glyphicon-search"></i></button>
+
     <div class="search-input float-right">
-        <input type="search" class="form-control" placeholder="{{'search' | translate}}" />
+        <input type="search" class="form-control" placeholder="{{'search' | translate}}" [(ngModel)]="search" />
     </div>
 </div>
 <div class="col-xs-12 margin-top-10">
-    <button class="add-new-item" type="button"><i class="glyphicon glyphicon-plus"></i></button>
-    <grid-ui [data]="data"></grid-ui>
+    <button class="add-new-item list-view-btn" type="button" ><i class="glyphicon glyphicon-plus"></i></button>
+    <grid-ui [data]="data" *ngIf="data"></grid-ui>
 </div>

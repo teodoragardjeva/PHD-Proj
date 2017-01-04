@@ -37,9 +37,19 @@ MenuComponent = __decorate([
     core_1.Component({
         selector: 'main-menu',
         templateUrl: "../../views/navigationSidebar.html",
-        providers: [webService_1.WebService]
+        providers: [webService_1.WebService],
+        host: {
+            '[@routeAnimation]': "true"
+        },
+        animations: [
+            core_1.trigger('routeAnimation', [
+                core_1.transition('* => void', core_1.animate('100ms ease-in')),
+                core_1.transition('void => *', core_1.animate('100ms ease-out')) // For next page
+            ])
+        ]
     }), 
     __metadata('design:paramtypes', [webService_1.WebService, sharedNavigationService_1.SharedNavigationService])
 ], MenuComponent);
 exports.MenuComponent = MenuComponent;
+
 //# sourceMappingURL=menuComponent.js.map

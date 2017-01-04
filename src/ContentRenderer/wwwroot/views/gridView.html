@@ -1,14 +1,26 @@
-﻿<table class="table table-condensed table-hover table-striped">
-    <thead>
-        <tr class="table-header">
-            <th *ngFor="let gridTitle of data.configuration.VisibleColumns" class="padding-top-bottom-15">{{gridTitle}}</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let gridItem of data.items">
-            <td *ngFor="let gridTitle of data.configuration.VisibleColumns">
-                {{gridItem[gridTitle]}}
-            </td>
-        </tr>
-    </tbody>
-</table>
+﻿<div class="list-view">
+    <table class="table table-condensed table-hover table-striped">
+        <thead>
+            <tr class="table-header">
+                <th *ngFor="let gridTitle of data.configuration.VisibleColumns" class="padding-top-bottom-15">{{gridTitle}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let gridItem of data.items">
+                <td *ngFor="let gridTitle of data.configuration.VisibleColumns">
+                    {{gridItem[gridTitle]}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="card-view">
+    <div *ngFor="let item of data.items" class="card-item">
+        <div *ngFor="let column of data.configuration.VisibleColumns">
+            <span *ngIf="cardColumns[column]" [ngClass]="{'font-weight-bold': headerColumns[column]}">
+                {{item[column]}}
+            </span>
+        </div>
+    </div>
+</div>

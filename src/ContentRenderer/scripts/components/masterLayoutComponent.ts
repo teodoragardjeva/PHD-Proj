@@ -5,7 +5,7 @@ import { Router, ActivatedRoute, NavigationEnd, Params, Event as NavigationEvent
 
 @Component({
     selector: 'main-view',
-    templateUrl: "../../views/masterLayout.html"
+    templateUrl: "../../views/masterLayout.html",
 })
 
 export class MasterLayoutComponent implements OnInit, OnDestroy{

@@ -28,9 +28,19 @@ let MenuSubItemComponent = class MenuSubItemComponent {
 MenuSubItemComponent = __decorate([
     core_1.Component({
         selector: 'menu-sub-item',
-        templateUrl: "../../views/menuSubItemView.html"
+        templateUrl: "../../views/menuSubItemView.html",
+        host: {
+            '[@routeAnimation]': "true"
+        },
+        animations: [
+            core_1.trigger('routeAnimation', [
+                core_1.transition('* => void', core_1.animate('100ms ease-in')),
+                core_1.transition('void => *', core_1.animate('100ms ease-out')) // For next page
+            ])
+        ]
     }), 
     __metadata('design:paramtypes', [sharedNavigationService_1.SharedNavigationService, router_1.ActivatedRoute, router_1.Router])
 ], MenuSubItemComponent);
 exports.MenuSubItemComponent = MenuSubItemComponent;
+
 //# sourceMappingURL=menuSubItemComponent.js.map

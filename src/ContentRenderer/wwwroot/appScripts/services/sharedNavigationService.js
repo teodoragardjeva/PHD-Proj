@@ -48,4 +48,5 @@ SharedNavigationService = __decorate([
     __metadata('design:paramtypes', [webService_1.WebService])
 ], SharedNavigationService);
 exports.SharedNavigationService = SharedNavigationService;
+
 //# sourceMappingURL=sharedNavigationService.js.map

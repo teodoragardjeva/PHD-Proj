@@ -22,4 +22,5 @@ Dashboard = __decorate([
     __metadata('design:paramtypes', [])
 ], Dashboard);
 exports.Dashboard = Dashboard;
+
 //# sourceMappingURL=dashboard.js.map

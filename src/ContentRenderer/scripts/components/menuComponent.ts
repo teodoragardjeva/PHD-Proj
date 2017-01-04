@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, trigger, transition, animate} from '@angular/core';
 import {TreeView} from './treeView';
 import {MenuListItem} from '../models/menuListItem';
 import {WebService} from '../services/webService';
@@ -17,7 +17,16 @@ import {NavigationType} from '../enums/navigationTypes';
 @Component({
     selector: 'main-menu',
     templateUrl: "../../views/navigationSidebar.html",
-    providers: [WebService]
+    providers: [WebService],
+    host: {
+        '[@routeAnimation]': "true"
+    },
+    animations: [
+        trigger('routeAnimation', [
+            transition('* => void', animate('100ms ease-in')),
+            transition('void => *', animate('100ms ease-out'))  // For next page
+        ])
+    ]
 })
     
 export class MenuComponent implements OnInit {

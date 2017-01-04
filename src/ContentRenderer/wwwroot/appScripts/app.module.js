@@ -27,11 +27,12 @@ const translationService_1 = require('./services/translationService');
 const translationPipe_1 = require('./pipes/translationPipe');
 const fieldFilterPipe_1 = require('./pipes/fieldFilterPipe');
 const sharedNavigationService_1 = require('./services/sharedNavigationService');
+const forms_2 = require('@angular/forms');
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule,
+        imports: [platform_browser_1.BrowserModule, forms_2.FormsModule,
             router_1.RouterModule.forRoot([
                 { path: 'grid-ui', component: list_1.ListElement },
                 { path: 'users', component: list_1.ListElement, data: { type: entityTypes_1.EntityType.User }, resolve: { items: listResolver_1.ListResolver } },
@@ -51,4 +52,5 @@ AppModule = __decorate([
     __metadata('design:paramtypes', [])
 ], AppModule);
 exports.AppModule = AppModule;
+
 //# sourceMappingURL=app.module.js.map

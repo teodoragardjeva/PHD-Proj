@@ -17,6 +17,11 @@ let ListElement = class ListElement {
         this.route = route;
         this.router = router;
     }
+    searchItems(newVal) {
+        this._webService.getItems(+this.route.snapshot.params['type'], this.search).then((result) => {
+            this.data.items = result;
+        });
+    }
     ngOnInit() {
         this.subscription = this.route.data
             .subscribe((result) => {
@@ -31,10 +36,20 @@ let ListElement = class ListElement {
 ListElement = __decorate([
     core_1.Component({
         selector: 'list-ui',
-        templateUrl: '../../views/listView.html'
+        templateUrl: '../../views/listView.html',
+        host: {
+            '[@routeAnimation]': "true"
+        },
+        animations: [
+            core_1.trigger('routeAnimation', [
+                core_1.transition('* => void', core_1.animate('100ms ease-in')),
+                core_1.transition('void => *', core_1.animate('100ms ease-out')) // For next page
+            ])
+        ]
     }),
     core_1.Injectable(), 
     __metadata('design:paramtypes', [webService_1.WebService, router_1.ActivatedRoute, router_1.Router])
 ], ListElement);
 exports.ListElement = ListElement;
+
 //# sourceMappingURL=list.js.map

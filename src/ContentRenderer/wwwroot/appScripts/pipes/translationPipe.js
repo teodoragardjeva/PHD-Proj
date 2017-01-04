@@ -27,4 +27,5 @@ TranslatePipe = __decorate([
     __metadata('design:paramtypes', [translationService_1.TranslationService])
 ], TranslatePipe);
 exports.TranslatePipe = TranslatePipe;
+
 //# sourceMappingURL=translationPipe.js.map
