@@ -6,10 +6,12 @@
 <div id="page-wrapper">
     <div *ngIf="_sharedNavigationService" class="navigation-history-container  margin-left-10 padding-top-10">
         <a [routerLink]="['/nav-item/' + navigationItem.id]"
-           [ngClass]="{'navigation-category': i}"
+           [ngClass]="{'navigation-category': i == _sharedNavigationService.navigationHistory.length - 1}"
            *ngFor="let navigationItem of _sharedNavigationService.navigationHistory; let i = index">
-            {{navigationItem.title}}{{i ==  _sharedNavigationService.navigationHistory.length - 1? '': '>'}}
+            {{navigationItem.title}}
+            <span *ngIf="i !=  _sharedNavigationService.navigationHistory.length - 1" class="navigation-category text-decoration-none"> &gt; </span>
         </a>
+
     </div>
     <router-outlet></router-outlet>
 </div>

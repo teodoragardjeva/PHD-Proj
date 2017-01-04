@@ -1,17 +1,12 @@
-﻿<div>teat</div>
-<grid-ui [data]="data"></grid-ui>
+﻿<div class="float-right col-xs-12">
+    <button type="button" class="btn btn-sm float-right margin-left-10 padding-top-bottom-6">{{'columns' | translate}}</button>
 
-<table>
-    <thead>
-        <tr>
-            <th *ngFor="let gridTitle of data.configuration.VisibleColumns">{{gridTitle}}</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let gridItem of data.items">
-            <td *ngFor="let gridTitle of data.configuration.VisibleColumns">
-                {{gridItem[gridTitle]}}
-            </td>
-        </tr>
-    </tbody>
-</table>
+    <button type="button" class="btn btn-sm float-right margin-left-10 padding-top-bottom-6">{{'advanced' | translate}}</button>
+    <div class="search-input float-right">
+        <input type="search" class="form-control" placeholder="{{'search' | translate}}" />
+    </div>
+</div>
+<div class="col-xs-12 margin-top-10">
+    <button class="add-new-item" type="button"><i class="glyphicon glyphicon-plus"></i></button>
+    <grid-ui [data]="data"></grid-ui>
+</div>

@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
-const translationService_1 = require("../services/translationService");
+const core_1 = require('@angular/core');
+const translationService_1 = require('../services/translationService');
 let TranslatePipe = class TranslatePipe {
     constructor(_translateService) {
         this._translateService = _translateService;
@@ -23,9 +23,8 @@ let TranslatePipe = class TranslatePipe {
 TranslatePipe = __decorate([
     core_1.Pipe({
         name: 'translate',
-    }),
-    __metadata("design:paramtypes", [translationService_1.TranslationService])
+    }), 
+    __metadata('design:paramtypes', [translationService_1.TranslationService])
 ], TranslatePipe);
 exports.TranslatePipe = TranslatePipe;
-
 //# sourceMappingURL=translationPipe.js.map

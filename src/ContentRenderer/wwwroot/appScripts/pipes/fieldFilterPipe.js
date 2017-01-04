@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
+const core_1 = require('@angular/core');
 let FilterByFieldPipe = class FilterByFieldPipe {
     transform(items, field, compareValue) {
         if (!items)
@@ -21,9 +21,8 @@ let FilterByFieldPipe = class FilterByFieldPipe {
 FilterByFieldPipe = __decorate([
     core_1.Pipe({
         name: 'filterByField',
-    }),
-    __metadata("design:paramtypes", [])
+    }), 
+    __metadata('design:paramtypes', [])
 ], FilterByFieldPipe);
 exports.FilterByFieldPipe = FilterByFieldPipe;
-
 //# sourceMappingURL=fieldFilterPipe.js.map

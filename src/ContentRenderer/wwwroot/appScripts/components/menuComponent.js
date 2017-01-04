@@ -8,11 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
-const webService_1 = require("../services/webService");
-const sharedNavigationService_1 = require("../services/sharedNavigationService");
-const globals_1 = require("../helpers/globals");
-const navigationTypes_1 = require("../enums/navigationTypes");
+const core_1 = require('@angular/core');
+const webService_1 = require('../services/webService');
+const sharedNavigationService_1 = require('../services/sharedNavigationService');
+const globals_1 = require('../helpers/globals');
+const navigationTypes_1 = require('../enums/navigationTypes');
 let MenuComponent = class MenuComponent {
     constructor(_webService, _sharedNavigationService) {
         this._webService = _webService;
@@ -38,9 +38,8 @@ MenuComponent = __decorate([
         selector: 'main-menu',
         templateUrl: "../../views/navigationSidebar.html",
         providers: [webService_1.WebService]
-    }),
-    __metadata("design:paramtypes", [webService_1.WebService, sharedNavigationService_1.SharedNavigationService])
+    }), 
+    __metadata('design:paramtypes', [webService_1.WebService, sharedNavigationService_1.SharedNavigationService])
 ], MenuComponent);
 exports.MenuComponent = MenuComponent;
-
 //# sourceMappingURL=menuComponent.js.map

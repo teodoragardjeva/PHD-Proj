@@ -16,17 +16,25 @@ let MasterLayoutComponent = class MasterLayoutComponent {
         this._sharedNavigationService = _sharedNavigationService;
         this.router = router;
         this.route = route;
-        let subscription = this._sharedNavigationService.data.subscribe(value => void (0), error => void (0), () => {
+        this.subscription = this._sharedNavigationService.data.subscribe(value => void (0), error => void (0), () => {
             this._sharedNavigationService.selectNavigationMenu(parseInt(this.route.snapshot.params['navId'], 10));
             router.events.forEach((event) => {
-                if (event instanceof router_1.NavigationStart) {
-                    this._sharedNavigationService.selectNavigationMenu(parseInt(this.route.snapshot.params['navId'], 10));
-                    this.route.params.subscribe(params => {
-                        console.log(params['navId']);
-                    });
+                if (event instanceof router_1.NavigationEnd) {
+                    if (!this.route.firstChild) {
+                        this._sharedNavigationService.selectNavigationMenu(null);
+                    }
+                    else {
+                        this._sharedNavigationService.selectNavigationMenu(parseInt(this.route.firstChild.snapshot.params['navId'], 10));
+                    }
                 }
             });
         });
+    }
+    ngOnInit() {
+    }
+    ngOnDestroy() {
+        // prevent memory leak by unsubscribing
+        this.subscription.unsubscribe();
     }
 };
 MasterLayoutComponent = __decorate([

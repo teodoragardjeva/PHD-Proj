@@ -8,10 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
-const sharedNavigationService_1 = require("../services/sharedNavigationService");
-const globals_1 = require("../helpers/globals");
-const router_1 = require("@angular/router");
+const core_1 = require('@angular/core');
+const sharedNavigationService_1 = require('../services/sharedNavigationService');
+const globals_1 = require('../helpers/globals');
+const router_1 = require('@angular/router');
 let MenuSubItemComponent = class MenuSubItemComponent {
     constructor(_sharedNavigationService, route, router) {
         this._sharedNavigationService = _sharedNavigationService;
@@ -29,11 +29,8 @@ MenuSubItemComponent = __decorate([
     core_1.Component({
         selector: 'menu-sub-item',
         templateUrl: "../../views/menuSubItemView.html"
-    }),
-    __metadata("design:paramtypes", [sharedNavigationService_1.SharedNavigationService,
-        router_1.ActivatedRoute,
-        router_1.Router])
+    }), 
+    __metadata('design:paramtypes', [sharedNavigationService_1.SharedNavigationService, router_1.ActivatedRoute, router_1.Router])
 ], MenuSubItemComponent);
 exports.MenuSubItemComponent = MenuSubItemComponent;
-
 //# sourceMappingURL=menuSubItemComponent.js.map

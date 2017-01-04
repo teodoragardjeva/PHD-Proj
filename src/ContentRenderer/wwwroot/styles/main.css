@@ -16,6 +16,16 @@
     background-color: #eee;
 }
 
+.padding-top-bottom-15 {
+    padding-bottom: 15px !important;
+    padding-top: 15px !important;
+
+}
+
+
+.margin-top-10 {
+    margin-top: 10px;
+}
 .ship-icon {
     width: 48px;
     height: 48px;
@@ -70,6 +80,18 @@
     background: rgba(0, 187, 214, 0.65);
 
 }
+
+.add-new-item {
+    position: absolute;
+    border-radius: 20px;
+    height: 40px;
+    width: 40px;
+    margin-top: -24px;
+    background: #18eaff;
+    color: white;
+    border: none;
+}
+
 .background-light-red {
     background: #ff897d;
 }
@@ -125,16 +147,44 @@
     color:rgba(0,0,0,.54) ;
 }
 
-.navigation-link, a.navigation-link:focus, a.navigation-link:hover {
-        text-decoration: none;
+.navigation-link, a.navigation-link:focus, a.navigation-link:hover, .text-decoration-none {
+        text-decoration: none !important;
     }
 
 .navigation-history-container a{
         font-size: 18px;
     }
 
+.float-right {
+    float: right;
+}
+
+.btn {
+    background: rgb(3, 169, 161) !important;
+    color: white;
+}
+
+.btn:hover, .btn:focus {
+    background: rgba(3, 169, 161, 0.75)!important;
+    color: white;
+}
+
+.padding-top-bottom-6 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.table-header {
+    background: #00bcd4;
+    color: white;
+}
+
 
 @media (min-width: 1000px) {
+    .search-input {
+        width: 225px;
+    }
+
     .navigation-link {
         font-size: 17px !important;
     }
@@ -165,6 +215,10 @@
     }
 }
 @media (max-width: 767px) {
+    .search-input {
+        width: 100px;
+    }
+    
     .navigation-link {
         font-size: 14px;
         font-weight: bold;

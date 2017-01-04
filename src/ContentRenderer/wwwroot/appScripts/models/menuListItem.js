@@ -1,5 +1,5 @@
 "use strict";
-const navigationItem_1 = require("./navigationItem");
+const navigationItem_1 = require('./navigationItem');
 class MenuListItem extends navigationItem_1.NavigationItem {
     constructor(id, title, url, icon, navigationTypes, type, parentId, subItems) {
         super(id, title);
@@ -14,5 +14,4 @@ class MenuListItem extends navigationItem_1.NavigationItem {
     }
 }
 exports.MenuListItem = MenuListItem;
-
 //# sourceMappingURL=menuListItem.js.map

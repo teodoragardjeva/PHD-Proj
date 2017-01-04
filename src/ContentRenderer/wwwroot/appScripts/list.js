@@ -18,11 +18,14 @@ let ListElement = class ListElement {
         this.router = router;
     }
     ngOnInit() {
-        this.route.data
+        this.subscription = this.route.data
             .subscribe((result) => {
             //the result is {items:dataFromWS}, the structure is set in the resolve object
             this.data = result.items;
         });
+    }
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
     }
 };
 ListElement = __decorate([

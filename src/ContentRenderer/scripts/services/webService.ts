@@ -31,7 +31,11 @@ export class WebService {
     }
 
     getGridItem(type: number) {
-        return this.getData(Configurations.serviceUrl + 'elements/gridItems/'+ type);
+        return this.getData(Configurations.serviceUrl + 'elements/gridConfigs/'+ type);
+    }
+
+    getItems(type: number, search: string) {
+        return this.getData(Configurations.serviceUrl + 'elements/gridItems/' + type + '/' + search);
     }
 
     getMenuItems() {

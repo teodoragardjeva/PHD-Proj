@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
-const localization_1 = require("../data/translations/localization");
+const core_1 = require('@angular/core');
+const localization_1 = require('../data/translations/localization');
 let TranslationService = class TranslationService {
     constructor() {
         this._currentLanguage = 'bg';
@@ -29,9 +29,8 @@ let TranslationService = class TranslationService {
     }
 };
 TranslationService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [])
+    core_1.Injectable(), 
+    __metadata('design:paramtypes', [])
 ], TranslationService);
 exports.TranslationService = TranslationService;
-
 //# sourceMappingURL=translationService.js.map

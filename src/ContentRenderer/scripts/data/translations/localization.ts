@@ -14,5 +14,17 @@
     'all': {
         'en': 'All',
         'bg': 'Всички'
+    },
+    'search': {
+        'en': 'Search',
+        'bg': 'Търсене'
+    },
+    'advanced': {
+        'en': 'Advanced',
+        'bg': 'Разширени'
+    },
+    'columns': {
+        'en': 'Columns',
+        'bg': 'Колони'
     }
 };

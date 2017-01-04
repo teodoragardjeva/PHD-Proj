@@ -36,7 +36,10 @@ let WebService = class WebService {
         });
     }
     getGridItem(type) {
-        return this.getData(globals_1.Configurations.serviceUrl + 'elements/gridItems/' + type);
+        return this.getData(globals_1.Configurations.serviceUrl + 'elements/gridConfigs/' + type);
+    }
+    getItems(type, search) {
+        return this.getData(globals_1.Configurations.serviceUrl + 'elements/gridItems/' + type + '/' + search);
     }
     getMenuItems() {
         return this.getData(globals_1.Configurations.serviceUrl + 'elements');

@@ -24,5 +24,4 @@ class Helpers {
     }
 }
 exports.Helpers = Helpers;
-
 //# sourceMappingURL=helpers.js.map

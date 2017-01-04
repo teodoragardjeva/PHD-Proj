@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const webService_1 = require("../services/webService");
-const router_1 = require("@angular/router");
-const core_1 = require("@angular/core");
+const webService_1 = require('../services/webService');
+const router_1 = require('@angular/router');
+const core_1 = require('@angular/core');
 let ListResolver = class ListResolver {
     constructor(_webService, router) {
         this._webService = _webService;
@@ -30,9 +30,8 @@ let ListResolver = class ListResolver {
     }
 };
 ListResolver = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [webService_1.WebService, router_1.Router])
+    core_1.Injectable(), 
+    __metadata('design:paramtypes', [webService_1.WebService, router_1.Router])
 ], ListResolver);
 exports.ListResolver = ListResolver;
-
-//# sourceMappingURL=ListResolver.js.map
+//# sourceMappingURL=listResolver.js.map

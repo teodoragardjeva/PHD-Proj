@@ -8,10 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
-const webService_1 = require("./webService");
-const BehaviorSubject_1 = require("rxjs/BehaviorSubject");
-const helpers_1 = require("../helpers/helpers");
+const core_1 = require('@angular/core');
+const webService_1 = require('./webService');
+const BehaviorSubject_1 = require('rxjs/BehaviorSubject');
+const helpers_1 = require('../helpers/helpers');
 let SharedNavigationService = class SharedNavigationService {
     constructor(_webService) {
         this._webService = _webService;
@@ -44,9 +44,8 @@ let SharedNavigationService = class SharedNavigationService {
     }
 };
 SharedNavigationService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [webService_1.WebService])
+    core_1.Injectable(), 
+    __metadata('design:paramtypes', [webService_1.WebService])
 ], SharedNavigationService);
 exports.SharedNavigationService = SharedNavigationService;
-
 //# sourceMappingURL=sharedNavigationService.js.map
