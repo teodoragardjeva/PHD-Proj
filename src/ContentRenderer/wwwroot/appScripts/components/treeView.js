@@ -26,5 +26,4 @@ TreeView = __decorate([
     __metadata('design:paramtypes', [])
 ], TreeView);
 exports.TreeView = TreeView;
-
 //# sourceMappingURL=treeView.js.map

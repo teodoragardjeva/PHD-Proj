@@ -10,12 +10,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require('@angular/core');
 const webService_1 = require('../services/webService');
+const sharedNavigationService_1 = require('../services/sharedNavigationService');
+const globals_1 = require('../helpers/globals');
+const navigationTypes_1 = require('../enums/navigationTypes');
 let MenuComponent = class MenuComponent {
-    constructor(_webService) {
+    constructor(_webService, _sharedNavigationService) {
         this._webService = _webService;
+        this._sharedNavigationService = _sharedNavigationService;
+        this.iconUrl = globals_1.Configurations.serviceUrl + 'elements/icon/';
     }
     ngOnInit() {
-        this._webService.getMenuItems().then((result) => this.items = result);
+        let subscription = this._sharedNavigationService.data.subscribe(value => void (0), error => void (0), () => {
+            let result = this._sharedNavigationService.data.getValue();
+            if (!result) {
+                this.items = [];
+                this.recent = [];
+                this.favourites = [];
+            }
+            this.items = result.filter(function (item) { return item && !item.parentId; });
+            this.recent = result.filter(function (item) { return item && item.navigationTypes !== null && typeof item.navigationTypes !== 'undefined' && item.navigationTypes.indexOf(navigationTypes_1.NavigationType.Recent) > -1; });
+            this.favourites = result.filter(function (item) { return item && item.navigationTypes !== null && typeof item.navigationTypes !== 'undefined' && item.navigationTypes.indexOf(navigationTypes_1.NavigationType.Favourite) > -1; });
+        });
     }
 };
 MenuComponent = __decorate([
@@ -24,8 +39,7 @@ MenuComponent = __decorate([
         templateUrl: "../../views/navigationSidebar.html",
         providers: [webService_1.WebService]
     }), 
-    __metadata('design:paramtypes', [webService_1.WebService])
+    __metadata('design:paramtypes', [webService_1.WebService, sharedNavigationService_1.SharedNavigationService])
 ], MenuComponent);
 exports.MenuComponent = MenuComponent;
-
 //# sourceMappingURL=menuComponent.js.map

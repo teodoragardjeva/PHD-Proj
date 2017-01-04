@@ -22,11 +22,11 @@ let WebService = class WebService {
                 }
                 else {
                     // Something went wrong (404 etc.)
-                    reject(new Error(this.statusText));
+                    reject(new Error(''));
                 }
             };
             request.onerror = function () {
-                reject(new Error('XMLHttpRequest Error: ' + this.statusText));
+                reject(new Error('XMLHttpRequest Error: ' + 'this.statusText'));
             };
             request.open('GET', url);
             //request.setRequestHeader('Access-Control-Allow-Headers', '*');
@@ -36,7 +36,10 @@ let WebService = class WebService {
         });
     }
     getGridItem(type) {
-        return this.getData(globals_1.Configurations.serviceUrl + 'elements/GetGridItems?type=' + type);
+        return this.getData(globals_1.Configurations.serviceUrl + 'elements/gridConfigs/' + type);
+    }
+    getItems(type, search) {
+        return this.getData(globals_1.Configurations.serviceUrl + 'elements/gridItems/' + type + '/' + search);
     }
     getMenuItems() {
         return this.getData(globals_1.Configurations.serviceUrl + 'elements');
@@ -50,5 +53,4 @@ WebService = __decorate([
     __metadata('design:paramtypes', [])
 ], WebService);
 exports.WebService = WebService;
-
 //# sourceMappingURL=webService.js.map

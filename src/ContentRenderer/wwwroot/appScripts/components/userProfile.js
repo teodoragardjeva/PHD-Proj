@@ -22,5 +22,4 @@ UserProfile = __decorate([
     __metadata('design:paramtypes', [])
 ], UserProfile);
 exports.UserProfile = UserProfile;
-
 //# sourceMappingURL=userProfile.js.map

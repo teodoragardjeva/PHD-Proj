@@ -1,5 +1,5 @@
---temp-output:D:\VSProjects\ContentRenderer\src\ContentRenderer\obj\Debug\netcoreapp1.0\
---out:D:\VSProjects\ContentRenderer\src\ContentRenderer\bin\Debug\netcoreapp1.0\ContentRenderer.dll
+--temp-output:D:\PHD\src\ContentRenderer\obj\Debug\netcoreapp1.0\
+--out:D:\PHD\src\ContentRenderer\bin\Debug\netcoreapp1.0\ContentRenderer.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -120,6 +120,6 @@
 --reference:C:\Users\Teodora\.nuget\packages\System.Threading.Timer\4.0.1-rc2-24027\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Teodora\.nuget\packages\System.Xml.ReaderWriter\4.0.11-rc2-24027\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Teodora\.nuget\packages\System.Xml.XDocument\4.0.11-rc2-24027\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"D:\VSProjects\ContentRenderer\src\ContentRenderer\obj\Debug\netcoreapp1.0\ContentRendererdotnet-compile.deps.json",ContentRenderer.deps.json
-D:\VSProjects\ContentRenderer\src\ContentRenderer\Program.cs
-D:\VSProjects\ContentRenderer\src\ContentRenderer\Startup.cs
+--resource:"D:\PHD\src\ContentRenderer\obj\Debug\netcoreapp1.0\ContentRendererdotnet-compile.deps.json",ContentRenderer.deps.json
+D:\PHD\src\ContentRenderer\Program.cs
+D:\PHD\src\ContentRenderer\Startup.cs

@@ -1,0 +1,17 @@
+﻿<div class="padding-left-10 background-light-grey padding-top-10 logo-container">
+    <div class="ship-icon display-inlline-block">
+    </div>
+    <div class="logo-title display-inlline-block">{{'dupiNavigator' | translate}}</div>
+</div>
+<div id="page-wrapper">
+    <div *ngIf="_sharedNavigationService" class="navigation-history-container  margin-left-10 padding-top-10">
+        <a [routerLink]="['/nav-item/' + navigationItem.id]"
+           [ngClass]="{'navigation-category': i == _sharedNavigationService.navigationHistory.length - 1}"
+           *ngFor="let navigationItem of _sharedNavigationService.navigationHistory; let i = index">
+            {{navigationItem.title}}
+            <span *ngIf="i !=  _sharedNavigationService.navigationHistory.length - 1" class="navigation-category text-decoration-none"> &gt; </span>
+        </a>
+
+    </div>
+    <router-outlet></router-outlet>
+</div>

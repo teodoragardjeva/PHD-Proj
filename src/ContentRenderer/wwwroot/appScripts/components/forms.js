@@ -22,5 +22,4 @@ FormsElement = __decorate([
     __metadata('design:paramtypes', [])
 ], FormsElement);
 exports.FormsElement = FormsElement;
-
 //# sourceMappingURL=forms.js.map

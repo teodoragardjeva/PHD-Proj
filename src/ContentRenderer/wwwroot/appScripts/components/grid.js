@@ -23,5 +23,4 @@ GridElement = __decorate([
     __metadata('design:paramtypes', [])
 ], GridElement);
 exports.GridElement = GridElement;
-
 //# sourceMappingURL=grid.js.map

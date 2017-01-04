@@ -1,9 +1,11 @@
-<ul class="nav" id="side-menu">
-    <li *ngFor="let menuItem of listItems" (click)="menuItem.expanded = !menuItem.expanded" >
-		<a href="#" [routerLink]="[menuItem.url]"   attr.data-target="{{'#' + menuItem.id}}" data-toggle="collapse"><i class="{{menuItem.icon}}"></i> {{menuItem.title}}
-		<span *ngIf="menuItem.subItems && menuItem.subItems.length > 0" class="glyphicon" [ngClass]="{'glyphicon-chevron-down': !menuItem.expanded,'glyphicon-chevron-up': menuItem.expanded}"></span></a>
+<ul class="nav dark-primary-color" id="side-menu">
+    <li *ngFor="let menuItem of listItems" (click)="menuItem.expanded = !menuItem.expanded">
+        <a href="#" [routerLink]="[menuItem.url]" attr.data-target="{{'#' + menuItem.id}}" data-toggle="collapse">
+            <i class="{{menuItem.icon}}"></i> {{menuItem.title}}
+            <span *ngIf="menuItem.subItems && menuItem.subItems.length > 0" class="glyphicon" [ngClass]="{'glyphicon-chevron-down': !menuItem.expanded,'glyphicon-chevron-up': menuItem.expanded}"></span>
+        </a>
         <div style="padding-left: 10px;" attr.id="{{menuItem.id}}" class="collapse">
-          
+
             <tree-view [listItems]="menuItem.subItems" *ngIf="menuItem.expanded"></tree-view>
         </div>
     </li>

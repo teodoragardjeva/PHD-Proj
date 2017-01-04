@@ -13,7 +13,7 @@ gulp.task('clean', function () {
 
 gulp.task("scriptsNStyles", () => {
     gulp.src([
-            'es6-shim/es6-shim.min.js',
+            'es6-shim/es6-shim.min.js', 
             'systemjs/dist/system-polyfills.js',
             'systemjs/dist/system.src.js',
             'reflect-metadata/Reflect.js',
@@ -29,7 +29,7 @@ gulp.task("scriptsNStyles", () => {
 
     gulp.src([
         'node_modules/bootstrap/dist/css/bootstrap.css'
-    ])
+    ]).pipe(gulp.dest('./wwwroot/libs/css'));
     gulp.src([
    'node_modules/bootstrap/dist/fonts/**'
     ]).pipe(gulp.dest('./wwwroot/libs/fonts'));
@@ -65,4 +65,4 @@ gulp.task('watch.ts', ['ts'], function () {
     return gulp.watch('./wwwroot/appScripts/*.ts', ['ts']);
 });
 
-gulp.task('default', ['scriptsNStyles', 'watch', 'ts', 'sourceMapGenerate']);//, 
+gulp.task('default', ['scriptsNStyles', 'watch', 'ts', 'sourceMapGenerate']);

@@ -1,1 +1,1 @@
-{"version":3,"sources":["enums/entityTypes.ts"],"names":[],"mappings":";AAAA,WAAY,UAAU;IAClB,2CAAQ,CAAA;AACZ,CAAC,EAFW,kBAAU,KAAV,kBAAU,QAErB;AAFD,IAAY,UAAU,GAAV,kBAEX,CAAA","file":"enums/entityTypes.js","sourcesContent":["export enum EntityType {\r\n    User = 1\r\n}"],"sourceRoot":"/source/"}
+{"version":3,"file":"entityTypes.js","sourceRoot":"","sources":["../../../scripts/enums/entityTypes.ts"],"names":[],"mappings":";AAAA,WAAY,UAAU;IAClB,2CAAQ,CAAA;AACZ,CAAC,EAFW,kBAAU,KAAV,kBAAU,QAErB;AAFD,IAAY,UAAU,GAAV,kBAEX,CAAA"}
