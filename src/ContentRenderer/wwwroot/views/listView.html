@@ -10,5 +10,5 @@
 </div>
 <div class="col-xs-12 margin-top-10">
     <button class="add-new-item list-view-btn" type="button" ><i class="glyphicon glyphicon-plus"></i></button>
-    <grid-ui [data]="data" *ngIf="data"></grid-ui>
+    <grid-ui [config]="config" *ngIf="config" [dataSource]="collection"></grid-ui>
 </div>

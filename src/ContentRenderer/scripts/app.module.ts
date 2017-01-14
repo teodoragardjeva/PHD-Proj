@@ -17,7 +17,8 @@ import {TranslationService} from './services/translationService';
 import {TranslatePipe} from './pipes/translationPipe';
 import {FilterByFieldPipe} from './pipes/fieldFilterPipe';
 import {SharedNavigationService} from './services/sharedNavigationService';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
     imports: [BrowserModule, FormsModule,

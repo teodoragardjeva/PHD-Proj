@@ -269,6 +269,18 @@
     font-weight: bold;
 }
 
+.font-size-11 {
+    font-size: 11px;
+}
+
+.display-none {
+    display: none;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
 @media (min-width: 468px) {
     .card-view {
         display: none;

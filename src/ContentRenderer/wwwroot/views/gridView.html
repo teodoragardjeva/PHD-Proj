@@ -2,23 +2,30 @@
     <table class="table table-condensed table-hover table-striped">
         <thead>
             <tr class="table-header">
-                <th *ngFor="let gridTitle of data.configuration.VisibleColumns" class="padding-top-bottom-15">{{gridTitle}}</th>
+                <th *ngFor="let gridTitle of config.configuration.VisibleColumns" class="padding-top-bottom-15 cursor-pointer" 
+                    
+                    (click)="setOrder(gridTitle)">
+                    {{metaColumns[gridTitle].translation || gridTitle}}
+                    <span class="font-size-11  glyphicon" 
+                          [ngClass]="{'display-none': sortBy !== gridTitle,'glyphicon-chevron-down': reverse, 'glyphicon-chevron-up': !reverse}"></span>
+                </th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let gridItem of data.items">
-                <td *ngFor="let gridTitle of data.configuration.VisibleColumns">
+            <tr *ngFor="let gridItem of visibleItems">
+                <td *ngFor="let gridTitle of config.configuration.VisibleColumns">
                     {{gridItem[gridTitle]}}
                 </td>
             </tr>
         </tbody>
     </table>
+
 </div>
 
 <div class="card-view">
-    <div *ngFor="let item of data.items" class="card-item">
-        <div *ngFor="let column of data.configuration.VisibleColumns">
-            <span *ngIf="cardColumns[column]" [ngClass]="{'font-weight-bold': headerColumns[column]}">
+    <div *ngFor="let item of data" class="card-item">
+        <div *ngFor="let column of config.configuration.VisibleColumns">
+            <span *ngIf="metaColumns[column] && metaColumns[column].card" [ngClass]="{'font-weight-bold': metaColumns[column].header}">
                 {{item[column]}}
             </span>
         </div>

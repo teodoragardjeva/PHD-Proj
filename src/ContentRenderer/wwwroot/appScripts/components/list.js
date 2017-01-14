@@ -11,22 +11,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 const webService_1 = require('../services/webService');
 const core_1 = require('@angular/core');
 const router_1 = require('@angular/router');
+const BehaviorSubject_1 = require('rxjs/BehaviorSubject');
 let ListElement = class ListElement {
     constructor(_webService, route, router) {
         this._webService = _webService;
         this.route = route;
         this.router = router;
+        this.collection = new BehaviorSubject_1.BehaviorSubject(new Array());
     }
     searchItems(newVal) {
         this._webService.getItems(+this.route.snapshot.params['type'], this.search).then((result) => {
-            this.data.items = result;
+            this.collection.next(result);
         });
     }
     ngOnInit() {
         this.subscription = this.route.data
             .subscribe((result) => {
             //the result is {items:dataFromWS}, the structure is set in the resolve object
-            this.data = result.items;
+            this.config = result.items;
         });
     }
     ngOnDestroy() {

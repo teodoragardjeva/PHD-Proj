@@ -22,9 +22,11 @@ import {GridConfiguration} from '../models/gridConfiguration';
 
 @Injectable()
 export class ListElement implements OnInit, OnDestroy {
-    data: GridConfiguration;
+    config: GridConfiguration;
     private subscription: Subscription;
     search: string;
+    public collection: BehaviorSubject<Array<Object>> = new BehaviorSubject(new Array<Object>());
+
 
     constructor(private _webService: WebService,
         private route: ActivatedRoute,
@@ -34,7 +36,7 @@ export class ListElement implements OnInit, OnDestroy {
 
     searchItems(newVal) {
         this._webService.getItems(+this.route.snapshot.params['type'], this.search).then((result: Object[]) => {
-            this.data.items = result;
+            this.collection.next(result);
         });
     }
 
@@ -42,7 +44,7 @@ export class ListElement implements OnInit, OnDestroy {
         this.subscription = this.route.data
             .subscribe((result: any) => {//according to router definition  resolve: { items: ListResolver }
                 //the result is {items:dataFromWS}, the structure is set in the resolve object
-                this.data = result.items;
+                this.config = result.items;
             });
     }
 

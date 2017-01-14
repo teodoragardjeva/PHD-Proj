@@ -20,6 +20,7 @@ gulp.task("scriptsNStyles", () => {
             'rxjs/**',
             'zone.js/dist/**',
             '@angular/**',
+            'ng2-pagination/**',
             'jquery/dist/jquery.*js',
             'bootstrap/dist/js/bootstrap.*js'
     ], {
