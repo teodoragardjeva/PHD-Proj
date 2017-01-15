@@ -12,14 +12,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let gridItem of visibleItems">
+            <tr *ngFor="let gridItem of visibleItems | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
                 <td *ngFor="let gridTitle of config.configuration.VisibleColumns">
                     {{gridItem[gridTitle]}}
                 </td>
             </tr>
         </tbody>
     </table>
-
+    <pagination-controls (pageChange)="p = $event" class="grid-pagination" *ngIf="visibleItems.length > 0"
+                        previousLabel="{{'prev' | translate}}"
+                        nextLabel="{{'next' | translate}}"></pagination-controls>
 </div>
 
 <div class="card-view">

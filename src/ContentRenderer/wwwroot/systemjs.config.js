@@ -13,7 +13,8 @@
         '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
         '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
         // other libraries
-        'rxjs':                      'npm:rxjs',
+        'rxjs': 'npm:rxjs',
+        'ng2-pagination': 'npm:ng2-pagination/dist/ng2-pagination-bundle.js',
         'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
     };
 
@@ -31,7 +32,8 @@
             },
             rxjs: {
                 defaultExtension: 'js'
-            }
+            },
+            'ng2-pagination': {format: 'register',  defaultExtension: 'js' },
         }
     }
 

@@ -26,5 +26,13 @@
     'columns': {
         'en': 'Columns',
         'bg': 'Колони'
+    },
+    'next': {
+        'en': 'Next',
+        'bg': 'Напред'
+    },
+    'prev': {
+        'en': 'Prev',
+        'bg': 'Назад'
     }
 };

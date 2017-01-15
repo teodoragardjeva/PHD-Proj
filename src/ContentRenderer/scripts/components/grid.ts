@@ -30,6 +30,7 @@ export class GridElement implements OnInit, OnDestroy {
     metaColumns: { [key: string]: PropertyMeta } = {}
     sortBy: string;
     reverse: boolean;
+    itemsPerPage: number = 15;
 
     ngOnInit() {
         if (!this.config || !this.config.meta) {

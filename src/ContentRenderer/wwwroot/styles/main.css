@@ -281,6 +281,15 @@
     cursor: pointer;
 }
 
+.grid-pagination .ng2-pagination .current {
+    background: #00bcd4;
+}
+
+.ng2-pagination li {
+    margin: 0;
+    padding: 5px 4px 5px 4px;
+}
+
 @media (min-width: 468px) {
     .card-view {
         display: none;
