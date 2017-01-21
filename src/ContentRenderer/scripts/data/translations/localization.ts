@@ -34,5 +34,45 @@
     'prev': {
         'en': 'Prev',
         'bg': 'Назад'
+    },
+    'filter': {
+        'en': 'Filter',
+        'bg': 'Филтрирай'
+    },
+    'between': {
+        'bg': 'Meжду',
+        'en': 'between'
+    },
+    'is': {
+        'bg': 'e',
+        'en': 'is'
+    },
+    'contains': {
+        'bg': 'съдържа',
+        'en': 'contains'
+    },
+    'none': {
+        'en': 'none',
+        'bg': 'няма'
+    },
+    'any': {
+        'en': 'any',
+        'bg': 'има'
+    },
+    'isNot': {
+        'en': 'is not',
+        'bg': 'не е'
+    },
+    'inList': {
+        'en': 'in list',
+        'bg': 'в списък'
+    },
+    'startsWith': {
+        'en': 'starts with',
+        'bg': 'започва с'
+    },
+    'filtering': {
+        'en': 'Filtering',
+        'bg': 'Филтриране'
     }
 };

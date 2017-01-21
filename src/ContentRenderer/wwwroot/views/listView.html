@@ -1,9 +1,18 @@
 ﻿<div class="float-right col-xs-12">
     <button type="button" class="btn float-right margin-left-10 list-view-btn">{{'columns' | translate}}</button>
 
-    <button type="button" class="btn float-right margin-left-10 card-view-btn">{{'advanced' | translate}}</button>
+    <button type="button" class="btn float-right margin-left-10 card-view-btn" (click)="extendedFilter.show()">{{'advanced' | translate}}</button>
     <button type="button" class="btn float-right margin-left-3 search-btn card-view-btn" (click)="searchItems()"><i class="glyphicon glyphicon-search"></i></button>
+    <extended-filter *ngIf="config" [config]="config">
+        <div class="on-filter">
+            <div class="row">
+                <button type="button" class="btn float-right margin-right-10" (click)="searchItems()">
+                    {{'filter' | translate}}
+                </button>
+            </div>
 
+        </div>
+    </extended-filter>
     <div class="search-input float-right">
         <input type="search" class="form-control" placeholder="{{'search' | translate}}" [(ngModel)]="search" />
     </div>

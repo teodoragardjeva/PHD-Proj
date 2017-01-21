@@ -1,4 +1,4 @@
-System.register(['../services/webService', '@angular/core', '@angular/router', 'rxjs/BehaviorSubject'], function(exports_1, context_1) {
+System.register(['../services/webService', '@angular/core', '@angular/router', 'rxjs/BehaviorSubject', './extendedFilter'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['../services/webService', '@angular/core', '@angular/router', '
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var webService_1, core_1, router_1, BehaviorSubject_1;
+    var webService_1, core_1, router_1, BehaviorSubject_1, extendedFilter_1;
     var ListElement;
     return {
         setters:[
@@ -25,6 +25,9 @@ System.register(['../services/webService', '@angular/core', '@angular/router', '
             },
             function (BehaviorSubject_1_1) {
                 BehaviorSubject_1 = BehaviorSubject_1_1;
+            },
+            function (extendedFilter_1_1) {
+                extendedFilter_1 = extendedFilter_1_1;
             }],
         execute: function() {
             let ListElement = class ListElement {
@@ -50,6 +53,10 @@ System.register(['../services/webService', '@angular/core', '@angular/router', '
                     this.subscription.unsubscribe();
                 }
             };
+            __decorate([
+                core_1.ViewChild(extendedFilter_1.ExtendedFilter), 
+                __metadata('design:type', extendedFilter_1.ExtendedFilter)
+            ], ListElement.prototype, "extendedFilter", void 0);
             ListElement = __decorate([
                 core_1.Component({
                     selector: 'list-ui',

@@ -11,3 +11,9 @@ src/ContentRenderer/node_modules/semver/
 src/ContentRenderer/node_modules/rxjs/
 node_modules/
 *.map
+src/ContentRenderer/obj/Debug/netcoreapp1.0/dotnet-compile-csc.rsp
+src/ContentRenderer/obj/Debug/netcoreapp1.0/dotnet-compile.rsp
+src/ContentRenderer/obj/Debug/netcoreapp1.0/.IncrementalCache
+src/ContentRenderer/obj/Debug/TypeScriptCompilerOutput.txt
+src/ContentRenderer/bin/Debug/netcoreapp1.0/ContentRenderer.pdb
+.vs/ContentRenderer/v14/.suo

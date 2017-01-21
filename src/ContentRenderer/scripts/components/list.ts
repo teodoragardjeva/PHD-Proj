@@ -1,10 +1,11 @@
 ﻿import {WebService} from '../services/webService';
-import {Component, Injectable, OnInit, OnDestroy, trigger, transition, animate} from '@angular/core';
+import { Component, Injectable, OnInit, OnDestroy, trigger, transition, animate, ViewChild} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import {Observable} from 'rxjs/Observable';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {GridConfiguration} from '../models/gridConfiguration';
+import { ExtendedFilter } from './extendedFilter';
 
 @Component({
     selector: 'list-ui',
@@ -27,6 +28,8 @@ export class ListElement implements OnInit, OnDestroy {
     search: string;
     public collection: BehaviorSubject<Array<Object>> = new BehaviorSubject(new Array<Object>());
 
+    @ViewChild(ExtendedFilter)
+    public extendedFilter: ExtendedFilter;
 
     constructor(private _webService: WebService,
         private route: ActivatedRoute,

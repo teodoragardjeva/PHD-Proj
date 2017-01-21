@@ -92,6 +92,36 @@
     border: none;
 }
 
+.add-new-item.extend-filter {
+    margin-top: 16px;
+    height: 35px;
+    width: 35px;
+}
+
+.colorful-modal-header {
+    background: #00bcd4;
+    color: white;
+    padding-bottom: 6px;
+    border-bottom-width: 8px;
+    padding-top: 6px;
+    border: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.modal {
+  background: rgba(0,0,0,0.6);
+}
+
+.colorful-modal-title {
+    font-size: 19px;
+    margin-left: 50px;
+}
+
+.margin-right-10 {
+    margin-right: 10px;
+}
+
 .background-light-red {
     background: #ff897d;
 }
@@ -288,6 +318,19 @@
 .ng2-pagination li {
     margin: 0;
     padding: 5px 4px 5px 4px;
+}
+
+.colorful-modal-header .close {
+    opacity: 1;
+}
+.colorful-modal-header .close:hover {
+    opacity: 0.8;
+}
+
+.extended-filter-container {
+    min-height: 200px;
+    max-height: 350px;
+    overflow-y: auto;
 }
 
 @media (min-width: 468px) {

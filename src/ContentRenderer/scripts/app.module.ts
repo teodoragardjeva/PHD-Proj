@@ -19,6 +19,8 @@ import {FilterByFieldPipe} from './pipes/fieldFilterPipe';
 import {SharedNavigationService} from './services/sharedNavigationService';
 import { FormsModule } from '@angular/forms';
 import { Ng2PaginationModule } from 'ng2-pagination'; 
+import { ExtendedFilter } from './components/extendedFilter';
+
 
 
 @NgModule({
@@ -36,7 +38,7 @@ import { Ng2PaginationModule } from 'ng2-pagination';
     ],
     providers: [ListResolver, WebService, TranslationService, SharedNavigationService],
     declarations: [TranslatePipe, FilterByFieldPipe, MasterLayoutComponent, MenuComponent, GridElement, UserProfile, FormsElement,
-        Dashboard, TreeView, ListElement, MenuSubItemComponent],
+        Dashboard, TreeView, ListElement, MenuSubItemComponent, ExtendedFilter],
     bootstrap: [MasterLayoutComponent],
    
 })
