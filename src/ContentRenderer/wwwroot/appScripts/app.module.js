@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/platform-browser', './components/menuComponent', './components/masterLayoutComponent', '@angular/router', './components/list', './components/grid', './components/userProfile', './components/forms', './components/dashboard', './components/treeView', './components/menuSubItemComponent', './enums/entityTypes', './helpers/listResolver', './services/webService', './services/translationService', './pipes/translationPipe', './pipes/fieldFilterPipe', './services/sharedNavigationService', '@angular/forms', 'ng2-pagination', './components/extendedFilter'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/platform-browser', './components/menuComponent', './components/masterLayoutComponent', '@angular/router', './components/list', './components/grid', './components/userProfile', './components/forms', './components/dashboard', './components/treeView', './components/menuSubItemComponent', './enums/entityTypes', './helpers/listResolver', './services/webService', './services/translationService', './pipes/translationPipe', './pipes/fieldFilterPipe', './services/sharedNavigationService', '@angular/forms', 'ng2-pagination', './components/extendedFilter', './components/inputComponent'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', '@angular/platform-browser', './components/men
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, menuComponent_1, masterLayoutComponent_1, router_1, list_1, grid_1, userProfile_1, forms_1, dashboard_1, treeView_1, menuSubItemComponent_1, entityTypes_1, listResolver_1, webService_1, translationService_1, translationPipe_1, fieldFilterPipe_1, sharedNavigationService_1, forms_2, ng2_pagination_1, extendedFilter_1;
+    var core_1, platform_browser_1, menuComponent_1, masterLayoutComponent_1, router_1, list_1, grid_1, userProfile_1, forms_1, dashboard_1, treeView_1, menuSubItemComponent_1, entityTypes_1, listResolver_1, webService_1, translationService_1, translationPipe_1, fieldFilterPipe_1, sharedNavigationService_1, forms_2, ng2_pagination_1, extendedFilter_1, inputComponent_1;
     var AppModule;
     return {
         setters:[
@@ -79,6 +79,9 @@ System.register(['@angular/core', '@angular/platform-browser', './components/men
             },
             function (extendedFilter_1_1) {
                 extendedFilter_1 = extendedFilter_1_1;
+            },
+            function (inputComponent_1_1) {
+                inputComponent_1 = inputComponent_1_1;
             }],
         execute: function() {
             let AppModule = class AppModule {
@@ -99,7 +102,7 @@ System.register(['@angular/core', '@angular/platform-browser', './components/men
                     ],
                     providers: [listResolver_1.ListResolver, webService_1.WebService, translationService_1.TranslationService, sharedNavigationService_1.SharedNavigationService],
                     declarations: [translationPipe_1.TranslatePipe, fieldFilterPipe_1.FilterByFieldPipe, masterLayoutComponent_1.MasterLayoutComponent, menuComponent_1.MenuComponent, grid_1.GridElement, userProfile_1.UserProfile, forms_1.FormsElement,
-                        dashboard_1.Dashboard, treeView_1.TreeView, list_1.ListElement, menuSubItemComponent_1.MenuSubItemComponent, extendedFilter_1.ExtendedFilter],
+                        dashboard_1.Dashboard, treeView_1.TreeView, list_1.ListElement, menuSubItemComponent_1.MenuSubItemComponent, extendedFilter_1.ExtendedFilter, inputComponent_1.InputComponent],
                     bootstrap: [masterLayoutComponent_1.MasterLayoutComponent],
                 }), 
                 __metadata('design:paramtypes', [])

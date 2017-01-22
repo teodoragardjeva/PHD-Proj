@@ -17,7 +17,10 @@
         <input type="search" class="form-control" placeholder="{{'search' | translate}}" [(ngModel)]="search" />
     </div>
 </div>
-<div class="col-xs-12 margin-top-10">
+<div class="col-xs-12 margin-top-10 grid-container">
     <button class="add-new-item list-view-btn" type="button" ><i class="glyphicon glyphicon-plus"></i></button>
     <grid-ui [config]="config" *ngIf="config" [dataSource]="collection"></grid-ui>
+    <div id="footer" class="text-align-center">
+        <button class="add-new-item card-view-btn margin-left-minus-17" type="button"><i class="glyphicon glyphicon-plus"></i></button>
+    </div>
 </div>

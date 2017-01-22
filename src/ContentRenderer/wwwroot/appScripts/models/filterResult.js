@@ -6,6 +6,9 @@ System.register([], function(exports_1, context_1) {
         setters:[],
         execute: function() {
             class FilterResult {
+                constructor() {
+                    this.operatorId = -1;
+                }
             }
             exports_1("FilterResult", FilterResult);
         }

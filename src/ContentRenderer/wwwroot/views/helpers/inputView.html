@@ -1,0 +1,32 @@
+﻿<div *ngIf="fieldMeta">
+    <input *ngIf="fieldMeta.type == 1" 
+           type="text" 
+           class="form-control mobile-input"
+           [(ngModel)]="model[field]"
+           [attr.required]="fieldMeta.isMandatory"
+           [maxlength]="!fieldMeta.maxLength && fieldMeta.maxLength != 0 ? '' : ('' + fieldMeta.maxLength)"
+           [minlength]="!fieldMeta.minLength && fieldMeta.minLength != 0 ? '' : ('' + fieldMeta.minLength)" />
+
+    <input *ngIf="fieldMeta.type == 2"
+           type="number"
+           class="form-control mobile-input"
+           [attr.required]="fieldMeta.isMandatory"
+           [(ngModel)]="model[field]"
+           [max]="!fieldMeta.maxLength && fieldMeta.maxLength != 0 ? '' : ('' + fieldMeta.maxLength)"
+           [min]="!fieldMeta.minLength && fieldMeta.minLength != 0 ? '' : ('' + fieldMeta.minLength)" />
+
+    <textarea *ngIf="fieldMeta.type == 3"
+           class="form-control"
+           [(ngModel)]="model[field]"
+           [attr.required]="fieldMeta.isMandatory"
+           [maxlength]="!fieldMeta.maxLength && fieldMeta.maxLength != 0 ? '' : ('' + fieldMeta.maxLength)"
+           [minlength]="!fieldMeta.minLength && fieldMeta.minLength != 0 ? '' : ('' + fieldMeta.minLength)"></textarea>
+
+    <input *ngIf="fieldMeta.type == 5"
+              type="checkbox"
+              [(ngModel)]="model[field]"/>
+    <input *ngIf="fieldMeta.type == 7"
+           type="date"
+           class="form-control mobile-input" 
+           [(ngModel)]="model[field]" />
+</div>

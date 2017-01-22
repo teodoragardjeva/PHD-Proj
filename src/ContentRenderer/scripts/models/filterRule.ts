@@ -9,5 +9,6 @@ export class FilterRule {
 
     constructor() {
         this.model = new FilterResult();
+        this.selectedContext = null;
     }
 }

@@ -74,5 +74,13 @@
     'filtering': {
         'en': 'Filtering',
         'bg': 'Филтриране'
+    },
+    'selectColumn': {
+        'en': '-- Select column...',
+        'bg': '-- Изберете колона...'
+    },
+    'selectOperator': {
+        'en': '-- Select operator...',
+        'bg': '-- Изберете оператор...'
     }
 };

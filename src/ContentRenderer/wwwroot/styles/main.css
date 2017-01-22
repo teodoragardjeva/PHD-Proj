@@ -109,6 +109,21 @@
     border-top-right-radius: 4px;
 }
 
+#footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:37px;
+   width:100%;
+   background:#00bcd4;
+}
+
+/* IE 6 */
+* html #footer {
+   position:absolute;
+   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
+
 .modal {
   background: rgba(0,0,0,0.6);
 }
@@ -333,6 +348,21 @@
     overflow-y: auto;
 }
 
+.text-align-center {
+    text-align: center;
+}
+
+.margin-left-minus-17 {
+    margin-left: -17px;
+}
+
+.add-new-item.card-view-btn {
+    margin-top: -16px;
+    height: 35px;
+    width: 35px;
+}
+
+
 @media (min-width: 468px) {
     .card-view {
         display: none;
@@ -341,13 +371,45 @@
     .list-view, .list-view-btn {
         display: inline;
     }
+
+    #footer {
+        display: none;
+    }
+
+    .grid-container {
+        padding-bottom: 0;
+    }
+
+    .filter-item {
+        margin-top: 10px;
+    }
 }
 
 @media (max-width: 467px) {
     .card-view {
         display: inline;
     }
+
+    .filter-item {
+        padding-bottom: 5px;
+        border-bottom: 1px dashed #d0caca;
+    }
     
+    .mobile-input {
+        line-height: 30px;
+    }
+
+    .filter-col {
+        margin-top: 5px;
+    }
+
+    #footer {
+        display: inline;
+    }
+
+    .grid-container {
+        padding-bottom: 40px;
+    }
     .search-input input {
         height: 31px;
     }

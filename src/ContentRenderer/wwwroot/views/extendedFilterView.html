@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header colorful-modal-header">
-                <button class="add-new-item list-view-btn extend-filter" type="button" (click)="addFilter()">
+                <button class="add-new-item extend-filter" type="button" (click)="addFilter()">
                     <i class="glyphicon glyphicon-plus"></i>
                 </button>
                 <span class="colorful-modal-title">{{'filtering' | translate}}</span>
@@ -13,26 +13,32 @@
                 <div class="extended-filter-container">
                     <div *ngFor="let filter of filterRules">
                         <!--for each added filter-->
-                        <div class="col-md-12 margin-top-10">
-                            <div class="col-md-4">
+                        <div class="col-md-12 filter-item">
+                            <div class="col-md-4 filter-col">
                                 <select [ngModel]="filter.selectedContext" (ngModelChange)="columnSelected($event, filter)"
                                         class="form-control">
+                                    <option [value]="null" [selected]="!filter.selectedContext">{{'selectColumn' | translate}}</option>
                                     <option *ngFor="let column of filterContexts" [ngValue]="column">
                                         <!--all columns-->
                                         {{column.propertyMeta.translation || column.propertyMeta.name}}
                                     </option>
                                 </select>
                             </div>
-                            <div class="col-md-2">
-                                <select [(ngModel)]="filter.name" *ngIf="filter.selectedContext"
+                            <div class="col-md-2 filter-col">
+                                <select [(ngModel)]="filter.model.operatorId" *ngIf="filter.selectedContext"
                                         class="form-control">
-                                    <option *ngFor="let opr of filter.selectedContext.operators" [ngValue]="filter.model.operatorId">
+                                    <option [value]="-1">{{'selectOperator' | translate}}</option>
+
+                                    <option *ngFor="let opr of filter.selectedContext.operators" [ngValue]="opr.id">
                                         {{opr.label}}
                                     </option>
                                 </select>
                             </div>
-                            <div class="col-md-3">
-                                <input *ngIf="filter.selectedContext" [type]="filter.selectedContext.propertyMeta.type == 2 ? 'number': (filter.selectedContext.propertyMeta.type === 7 ? 'date' : 'text')" [(ngModel)]="filter.model.value" class="form-control" />
+                            <div class="col-md-3 filter-col">
+                                <div *ngIf="filter.selectedContext">
+                                    <generic-input [fieldMeta]="filter.selectedContext.propertyMeta" [model]="filter.model" [field]="'value'"></generic-input>
+                                    <span>{{filter.model.value}}</span>
+                                </div>
                             </div>
                         </div>
                     </div>

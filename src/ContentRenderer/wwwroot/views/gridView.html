@@ -25,11 +25,28 @@
 </div>
 
 <div class="card-view">
-    <div *ngFor="let item of data" class="card-item">
-        <div *ngFor="let column of config.configuration.visibleColumns">
-            <span *ngIf="metaColumns[column] && metaColumns[column].card" [ngClass]="{'font-weight-bold': metaColumns[column].header}">
-                {{item[column]}}
-            </span>
+    <div *ngFor="let item of data; let i = index" class="card-item row">
+        <div class="col-xs-10 cursor-pointer">
+            <div data-toggle="collapse" [attr.data-target]="'#details' + i">
+                <div *ngFor="let column of config.configuration.visibleColumns">
+                    <span *ngIf="metaColumns[column] && metaColumns[column].header" class="font-weight-bold">
+                        {{item[column]}}
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-xs-2">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        </div>
+        
+       
+        <div [id]="'details' + i" class="collapse col-xs-12">
+            <div *ngFor="let column of config.configuration.visibleColumns;">
+                <span *ngIf="metaColumns[column] && metaColumns[column].card && !metaColumns[column].header">
+                    {{item[column]}}
+                </span>
+            </div>
         </div>
     </div>
 </div>

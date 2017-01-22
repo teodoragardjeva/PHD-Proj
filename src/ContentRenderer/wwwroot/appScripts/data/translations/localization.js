@@ -81,6 +81,14 @@ System.register([], function(exports_1, context_1) {
                 'filtering': {
                     'en': 'Filtering',
                     'bg': 'Филтриране'
+                },
+                'selectColumn': {
+                    'en': '-- Select column...',
+                    'bg': '-- Изберете колона...'
+                },
+                'selectOperator': {
+                    'en': '-- Select operator...',
+                    'bg': '-- Изберете оператор...'
                 }
             });
         }

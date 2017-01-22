@@ -12,6 +12,7 @@ System.register(['./filterResult'], function(exports_1, context_1) {
             class FilterRule {
                 constructor() {
                     this.model = new filterResult_1.FilterResult();
+                    this.selectedContext = null;
                 }
             }
             exports_1("FilterRule", FilterRule);
