@@ -362,6 +362,9 @@
     width: 35px;
 }
 
+.navigation-history-container span:hover {
+    text-decoration: none !important;
+}
 
 @media (min-width: 468px) {
     .card-view {

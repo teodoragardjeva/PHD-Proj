@@ -10,7 +10,7 @@
                [ngClass]="{'navigation-category': i == _sharedNavigationService.navigationHistory.length - 1}"
                *ngFor="let navigationItem of _sharedNavigationService.navigationHistory; let i = index">
                 {{navigationItem.title}}
-                <span *ngIf="i !=  _sharedNavigationService.navigationHistory.length - 1" class="navigation-category text-decoration-none"> &gt; </span>
+                <span *ngIf="i !=  _sharedNavigationService.navigationHistory.length - 1" class="navigation-category text-decoration-none"> / </span>
             </a>
 
         </div>

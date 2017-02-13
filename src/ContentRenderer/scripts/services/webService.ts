@@ -1,9 +1,17 @@
 import {Injectable} from '@angular/core';
 import {MenuListItem} from '../models/menuListItem';
-import {Configurations} from '../helpers/globals';
+import { Configurations } from '../helpers/globals';
+import { Helpers } from '../helpers/helpers';
+
+import { Http, Response } from '@angular/http';
 
 @Injectable()
 export class WebService {
+
+    constructor(private http: Http) {
+
+    }
+    
     getData(url: string) {
         return new Promise(
             function (resolve, reject) {
@@ -46,4 +54,12 @@ export class WebService {
         return this.getData('../../data/users.json');
     }
 
+    login(username: string, password: string, callback: any) {
+        this.http.post("loginUrl", JSON.stringify({ username: username, password: password })).subscribe(data => {
+
+            if (typeof callback == 'function') {
+                callback(data);
+            }
+        });
+    }
 }

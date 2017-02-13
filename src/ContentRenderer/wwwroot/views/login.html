@@ -1,0 +1,21 @@
+﻿<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="col-sm-12">
+            <div class="col-sm-5">
+                <label for="tbUsername">{{'username' | translate}}</label>
+            </div>
+            <div class="col-sm-4">
+                <input type="text" name="tbUsername" class="form-control input-sm" [(ngModel)]="username"/>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-sm-5">
+                <label for="tbPassword">{{'password' | translate}}</label>
+            </div>
+            <div class="col-sm-4">
+                <input type="password" name="tbPassword"  class="form-control input-sm" [(ngModel)]="password" />
+            </div>
+        </div>
+        <button type="button" class="btn btn-info" (ngClick)="login()">{{'login' | translate}}</button>
+    </div>
+</div>

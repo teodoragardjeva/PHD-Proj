@@ -82,5 +82,17 @@
     'selectOperator': {
         'en': '-- Select operator...',
         'bg': '-- Изберете оператор...'
+    },
+    'username': {
+        'en': 'Username',
+        'bg': 'Потребителско име'
+    },
+    'password': {
+        'en': 'Password',
+        'bg': 'Парола'
+    },
+    'login': {
+        'en': 'Login',
+        'bg': 'Влез'
     }
 };

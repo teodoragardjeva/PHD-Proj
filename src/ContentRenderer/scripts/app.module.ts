@@ -21,24 +21,28 @@ import { FormsModule } from '@angular/forms';
 import { Ng2PaginationModule } from 'ng2-pagination'; 
 import { ExtendedFilter } from './components/extendedFilter';
 import { InputComponent } from './components/inputComponent';
-
+import { AuthGuard } from './helpers/authGuard';
+import { HttpModule } from '@angular/http';
+import { LoginComponent } from './components/login';
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, Ng2PaginationModule,
+    imports: [BrowserModule, FormsModule, Ng2PaginationModule, HttpModule,
         RouterModule.forRoot([
-            { path: 'grid-ui', component: ListElement },
-            { path: 'users', component: ListElement, data: { type: EntityType.User }, resolve: { items: ListResolver } },
-            { path: 'items/:navId/:type', component: ListElement, resolve: { items: ListResolver } },
-            { path: 'user-profile', component: UserProfile },
-            { path: 'forms-ui', component: FormsElement },
-            { path: 'dashboard', component: MenuComponent },
-            { path: '', component: MenuComponent },
-            { path: 'nav-item/:navId', component: MenuSubItemComponent},
+            { path: 'grid-ui', component: ListElement, canActivate: [AuthGuard] },
+            { path: 'users', component: ListElement, data: { type: EntityType.User }, resolve: { items: ListResolver }, canActivate: [AuthGuard] },
+            { path: 'items/:navId/:type', component: ListElement, resolve: { items: ListResolver }, canActivate: [AuthGuard] },
+            { path: 'user-profile', component: UserProfile, canActivate: [AuthGuard] },
+            { path: 'forms-ui', component: FormsElement, canActivate: [AuthGuard] },
+            { path: 'dashboard', component: MenuComponent, canActivate: [AuthGuard] },
+            { path: '', component: MenuComponent, canActivate: [AuthGuard] },
+            { path: 'nav-item/:navId', component: MenuSubItemComponent, canActivate: [AuthGuard] },
+            { path: 'login', component: LoginComponent},
+
         ])
     ],
-    providers: [ListResolver, WebService, TranslationService, SharedNavigationService],
+    providers: [ListResolver, WebService, TranslationService, SharedNavigationService, AuthGuard],
     declarations: [TranslatePipe, FilterByFieldPipe, MasterLayoutComponent, MenuComponent, GridElement, UserProfile, FormsElement,
-        Dashboard, TreeView, ListElement, MenuSubItemComponent, ExtendedFilter, InputComponent],
+        Dashboard, TreeView, ListElement, MenuSubItemComponent, ExtendedFilter, InputComponent, LoginComponent],
     bootstrap: [MasterLayoutComponent],
    
 })
