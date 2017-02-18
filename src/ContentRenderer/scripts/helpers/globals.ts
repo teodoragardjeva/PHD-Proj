@@ -1,5 +1,5 @@
 ﻿export class Configurations {
    
-    static serviceUrl = "http://localhost:54400/api/";
+    static serviceUrl = "http://localhost:51328/Service.svc/";
     static sessionKey = "sessionKey";
 }

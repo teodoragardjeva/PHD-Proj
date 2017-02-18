@@ -1,15 +1,15 @@
 ﻿<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
     
     <div class="row" *ngIf="item">
-        <div class="square background-olive" *ngFor="let menuItem of item.subItems">
+        <div class="square background-olive" *ngFor="let menuItem of item.SubItems">
             <div class="content">
                 <div class="table">
                     <div class="table-cell">
-                        <img [src]="iconUrl + menuItem.icon" />
+                        <img [src]="iconUrl + menuItem.Icon" />
                         <br />
-                        <a [routerLink]="[menuItem.subItems && menuItem.subItems.length > 0 ? ('/nav-item/'+ menuItem.id) : ('/items/' + menuItem.id + '/' + menuItem.type)]"
+                        <a [routerLink]="[menuItem.SubItems && menuItem.SubItems.length > 0 ? ('/nav-item/'+ menuItem.Id) : ('/items/' + menuItem.Id + '/' + menuItem.Type)]"
                            class="navigation-link color-white">
-                            {{menuItem.title}}
+                            {{menuItem.Title}}
                         </a>
                     </div>
                 </div>

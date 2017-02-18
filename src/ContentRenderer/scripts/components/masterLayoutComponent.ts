@@ -12,12 +12,12 @@ export class MasterLayoutComponent implements OnInit, OnDestroy{
     private subscription: Subscription;
 
     constructor(public _sharedNavigationService: SharedNavigationService, private router: Router, private route: ActivatedRoute) {
-        
+
         this.subscription = this._sharedNavigationService.data.subscribe(
             value => void (0),
             error => void (0),
             () => {
-                this._sharedNavigationService.selectNavigationMenu(parseInt(this.route.snapshot.params['navId'], 10));
+                this._sharedNavigationService.selectNavigationMenu(this.route.snapshot.params['navId']);
 
                 router.events.forEach((event: NavigationEvent) => {
                     if (event instanceof NavigationEnd) {
@@ -25,7 +25,7 @@ export class MasterLayoutComponent implements OnInit, OnDestroy{
                             this._sharedNavigationService.selectNavigationMenu(null);
                         }
                         else {
-                            this._sharedNavigationService.selectNavigationMenu(parseInt(this.route.firstChild.snapshot.params['navId'], 10));
+                            this._sharedNavigationService.selectNavigationMenu(this.route.firstChild.snapshot.params['navId']);
                         }
                     }
                 });

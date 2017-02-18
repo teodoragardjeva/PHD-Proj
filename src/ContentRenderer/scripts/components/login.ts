@@ -1,6 +1,8 @@
 ﻿import { Component, Injectable } from '@angular/core';
 import { WebService } from '../services/webService';
-import { Helpers} from '../helpers/helpers'
+import { Helpers } from '../helpers/helpers'
+import { SharedNavigationService } from '../services/sharedNavigationService';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,15 +15,18 @@ export class LoginComponent {
     public username: string;
     public password: string;
 
-    constructor(private webService: WebService, private router: Router) { }
+    constructor(private _sharedNavigationService: SharedNavigationService, private webService: WebService, private router: Router) { }
 
     Login() {
-        this.webService.login(this.username, this.password, (data) => {
-            if (!data.sessionKey) {
+        var promise = this.webService.login(this.username, this.password);
+        promise.subscribe((data: any) => {
+            if (!data.json) {
                 return;
             }
 
-            Helpers.setSession(data.sessionKey);
+            Helpers.setSession(data.json());
+            this._sharedNavigationService.getMenuItems();
+
             this.router.navigate(['dashboard']);
         });
     }

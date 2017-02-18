@@ -50,9 +50,9 @@ export class MenuComponent implements OnInit {
                     this.favourites = [];
                 }
 
-                this.items = result.filter(function (item) { return item && !item.parentId});
-                this.recent = result.filter(function (item) { return item && item.navigationTypes !== null && typeof item.navigationTypes !== 'undefined' && item.navigationTypes.indexOf(NavigationType.Recent) > -1 });
-                this.favourites = result.filter(function (item) { return item && item.navigationTypes !== null && typeof item.navigationTypes !== 'undefined' && item.navigationTypes.indexOf(NavigationType.Favourite) > -1 });
+                this.items = result.filter(function (item) { return item && !item.ParentId});
+                this.recent = result.filter(function (item) { return item && item.NavigationTypes !== null && typeof item.NavigationTypes !== 'undefined' && item.NavigationTypes.indexOf(NavigationType.Recent) > -1 });
+                this.favourites = result.filter(function (item) { return item && item.NavigationTypes !== null && typeof item.NavigationTypes !== 'undefined' && item.NavigationTypes.indexOf(NavigationType.Favourite) > -1 });
             }
         );
         

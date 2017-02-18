@@ -6,10 +6,10 @@
                 <div class="content">
                     <div class="table">
                         <div class="table-cell">
-                            <img [src]="iconUrl + menuItem.icon" />
+                            <img [src]="iconUrl + menuItem.Icon" />
                             <br />
-                            <a [routerLink]="[menuItem.subItems && menuItem.subItems.length > 0 ?('/nav-item/' + menuItem.id) : ('/items/'+ menuItem.id + '/' + menuItem.type)]" class="navigation-link color-white">
-                                {{menuItem.title}}
+                            <a [routerLink]="[menuItem.SubItems && menuItem.SubItems.length > 0 ?('/nav-item/' + menuItem.Id) : ('/items/'+ menuItem.Id + '/' + menuItem.Type)]" class="navigation-link color-white">
+                                {{menuItem.Title}}
                             </a>
                         </div>
                     </div>
@@ -24,10 +24,10 @@
                 <div class="content">
                     <div class="table">
                         <div class="table-cell">
-                            <img [src]="iconUrl + menuItem.icon" />
+                            <img [src]="iconUrl + menuItem.Icon" />
                             <br />
-                            <a [routerLink]="[menuItem.subItems && menuItem.subItems.length > 0 ? ('/nav-item/' + menuItem.id) : ('/items/'+ menuItem.id + '/' + menuItem.type)]" class="navigation-link color-white">
-                                {{menuItem.title}}
+                            <a [routerLink]="[menuItem.SubItems && menuItem.SubItems.length > 0 ? ('/nav-item/' + menuItem.Id) : ('/items/'+ menuItem.Id + '/' + menuItem.Type)]" class="navigation-link color-white">
+                                {{menuItem.Title}}
                             </a>
                         </div>
                     </div>
@@ -44,11 +44,11 @@
                 <div class="content">
                     <div class="table">
                         <div class="table-cell">
-                            <img [src]="iconUrl + menuItem.icon" />
+                            <img [src]="iconUrl + menuItem.Icon" />
                             <br />
-                            <a [routerLink]="[menuItem.subItems && menuItem.subItems.length > 0 ? ('/nav-item/' + menuItem.id) : ('/items/'+ menuItem.id + '/' + menuItem.type)]" 
+                            <a [routerLink]="[menuItem.SubItems && menuItem.SubItems.length > 0 ? ('/nav-item/' + menuItem.Id) : ('/items/'+ menuItem.Id + '/' + menuItem.Type)]" 
                                class="navigation-link color-white">
-                                {{menuItem.title}}
+                                {{menuItem.Title}}
                             </a>
                         </div>
                     </div>

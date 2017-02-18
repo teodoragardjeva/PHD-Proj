@@ -3,7 +3,8 @@ import {SharedNavigationService} from '../services/sharedNavigationService';
 import {MenuListItem} from '../models/menuListItem';
 import {OnInit} from '@angular/core';
 import {Configurations} from '../helpers/globals';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd, Params, Event as NavigationEvent } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'menu-sub-item',
@@ -34,7 +35,13 @@ export class MenuSubItemComponent implements OnInit {
             value => void (0),
             error => void (0),
             () => {
-                this.item = this._sharedNavigationService.getItem(parseInt(this.route.snapshot.params['navId'], 10));
+                this.item = this._sharedNavigationService.getItem(this.route.snapshot.params['navId']);
+
+                this.router.events.forEach((event: NavigationEvent) => {
+                    if (event instanceof NavigationEnd) {
+                        this.item = this._sharedNavigationService.getItem(this.route.snapshot.params['navId']);
+                    }
+                });
             }
         );
 

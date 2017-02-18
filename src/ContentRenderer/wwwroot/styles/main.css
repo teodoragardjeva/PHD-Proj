@@ -366,6 +366,15 @@
     text-decoration: none !important;
 }
 
+.login-form {
+    margin-top: 40px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
 @media (min-width: 468px) {
     .card-view {
         display: none;

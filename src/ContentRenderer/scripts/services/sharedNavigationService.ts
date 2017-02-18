@@ -11,10 +11,14 @@ import {NavigationItem } from '../models/navigationItem';
 export class SharedNavigationService {
     public data: BehaviorSubject<Array<MenuListItem>> = new BehaviorSubject(new Array<MenuListItem>());
     public selectedMenuItem: MenuListItem;
-    private kvpMenuItems: { [id: number]: MenuListItem }
+    private kvpMenuItems: { [id: string]: MenuListItem }
     public navigationHistory: NavigationItem[];
 
     constructor(private _webService: WebService) {
+       
+    }
+
+    public getMenuItems() {
         this._webService.getMenuItems().then((result: any) => {
             if (!result) {
                 result = [];
@@ -27,19 +31,19 @@ export class SharedNavigationService {
         });
     }
 
-    public selectNavigationMenu(id: number) {
+    public selectNavigationMenu(id: string) {
         let arr: NavigationItem[] = [];
         let item: MenuListItem;
 
-        while (id > 0) {
+        while (id !== '' && id !== null) {
             item = this.kvpMenuItems[id];
 
             if (!item) {
                 return;
             }
 
-            arr.push({ id: item.id, title: item.title });
-            id = item.parentId;
+            arr.push({ Id: item.Id, Title: item.Title });
+            id = item.ParentId;
         }
 
         arr.reverse();
@@ -47,7 +51,7 @@ export class SharedNavigationService {
         this.navigationHistory = arr;
     }
 
-    public getItem(id: number): MenuListItem {
-        return !id || isNaN(id) || !this.kvpMenuItems || !this.kvpMenuItems[id] ? null : this.kvpMenuItems[id];
+    public getItem(id: string): MenuListItem {
+        return !id || !this.kvpMenuItems || !this.kvpMenuItems[id] ? null : this.kvpMenuItems[id];
     }
 }

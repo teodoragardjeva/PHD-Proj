@@ -2,8 +2,8 @@
 import { Configurations } from './globals';
 
 export class Helpers {
-    static getNavigationTree(items: MenuListItem[]): { [id: number]: MenuListItem } {
-        let transformedData: { [id: number]: MenuListItem } = {};
+    static getNavigationTree(items: MenuListItem[]): { [id: string]: MenuListItem } {
+        let transformedData: { [id: string]: MenuListItem } = {};
         let item: MenuListItem;
 
         for (let i = 0; i < items.length; i += 1) {
@@ -12,19 +12,19 @@ export class Helpers {
                 continue;
             }
 
-            transformedData[item.id] = item;
+            transformedData[item.Id] = item;
         }
 
         for (let i = 0; i < items.length; i += 1) {
             item = items[i];
-            if (!item || !item.parentId || !transformedData[item.parentId]) {
+            if (!item || !item.ParentId || !transformedData[item.ParentId]) {
                 continue;
             }
-            if (!transformedData[item.parentId].subItems) {
-                transformedData[item.parentId].subItems = [] as MenuListItem[];
+            if (!transformedData[item.ParentId].SubItems) {
+                transformedData[item.ParentId].SubItems = [] as MenuListItem[];
             }
 
-            transformedData[item.parentId].subItems.push(item);
+            transformedData[item.ParentId].SubItems.push(item);
         }
 
         return transformedData;

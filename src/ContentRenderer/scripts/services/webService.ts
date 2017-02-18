@@ -2,8 +2,7 @@ import {Injectable} from '@angular/core';
 import {MenuListItem} from '../models/menuListItem';
 import { Configurations } from '../helpers/globals';
 import { Helpers } from '../helpers/helpers';
-
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers, RequestOptions} from '@angular/http';
 
 @Injectable()
 export class WebService {
@@ -47,19 +46,18 @@ export class WebService {
     }
 
     getMenuItems() {
-        return this.getData(Configurations.serviceUrl + 'elements');
+        return this.getData(Configurations.serviceUrl + 'GetMenuElements?sessionKey=' + Helpers.getSession());
     }
 
     getUsers() {
         return this.getData('../../data/users.json');
     }
 
-    login(username: string, password: string, callback: any) {
-        this.http.post("loginUrl", JSON.stringify({ username: username, password: password })).subscribe(data => {
+    login(username: string, password: string) {
 
-            if (typeof callback == 'function') {
-                callback(data);
-            }
-        });
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+
+        return this.http.post(Configurations.serviceUrl + "Login", JSON.stringify({ Username: username, Password: password }), options);
     }
 }
