@@ -22,7 +22,7 @@ import { Subscription } from 'rxjs';
 
 export class MenuSubItemComponent implements OnInit {
     public item: MenuListItem;
-    iconUrl: string = Configurations.serviceUrl + 'elements/icon/';
+    iconUrl: string = Configurations.serviceUrl + 'GetIcon?icon=';
 
 
     constructor(public _sharedNavigationService: SharedNavigationService,

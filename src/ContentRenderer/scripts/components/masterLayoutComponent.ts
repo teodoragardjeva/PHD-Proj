@@ -1,6 +1,7 @@
 ﻿import {Component, OnInit, OnDestroy} from '@angular/core';
 import {Subscription } from 'rxjs';
-import {SharedNavigationService} from '../services/sharedNavigationService';
+import { SharedNavigationService } from '../services/sharedNavigationService';
+
 import { Router, ActivatedRoute, NavigationEnd, Params, Event as NavigationEvent } from '@angular/router';
 
 @Component({
@@ -11,7 +12,8 @@ import { Router, ActivatedRoute, NavigationEnd, Params, Event as NavigationEvent
 export class MasterLayoutComponent implements OnInit, OnDestroy{
     private subscription: Subscription;
 
-    constructor(public _sharedNavigationService: SharedNavigationService, private router: Router, private route: ActivatedRoute) {
+    constructor(public _sharedNavigationService: SharedNavigationService, private router: Router,
+        private route: ActivatedRoute) {
 
         this.subscription = this._sharedNavigationService.data.subscribe(
             value => void (0),
@@ -32,6 +34,8 @@ export class MasterLayoutComponent implements OnInit, OnDestroy{
 
             }
         );
+
+
     }
 
     ngOnInit() {

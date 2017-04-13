@@ -9,7 +9,8 @@ import {UserProfile} from './userProfile';
 import {FormsElement} from './forms';
 import { RouterModule } from '@angular/router';
 import {Configurations} from '../helpers/globals';
-import {NavigationType} from '../enums/navigationTypes';
+import { NavigationType } from '../enums/navigationTypes';
+import { UserService } from '../services/userService';
 
 
 
@@ -33,10 +34,11 @@ export class MenuComponent implements OnInit {
     items: MenuListItem[];
     recent: MenuListItem[];
     favourites: MenuListItem[];
-    iconUrl: string = Configurations.serviceUrl + 'elements/icon/';
+    iconUrl: string = Configurations.serviceUrl + 'GetIcon?icon=';
 
-    constructor(private _webService: WebService, private _sharedNavigationService: SharedNavigationService) {
-
+    constructor(private _webService: WebService, private _sharedNavigationService: SharedNavigationService, private _userService: UserService) {
+        this._sharedNavigationService.getMenuItems();
+        this._userService.getUserSettings();
     }
     ngOnInit() {
         let subscription = this._sharedNavigationService.data.subscribe(

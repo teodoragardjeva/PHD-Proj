@@ -2,6 +2,7 @@
 import { WebService } from '../services/webService';
 import { Helpers } from '../helpers/helpers'
 import { SharedNavigationService } from '../services/sharedNavigationService';
+import { UserService } from '../services/userService';
 
 import { Router } from '@angular/router';
 
@@ -15,7 +16,7 @@ export class LoginComponent {
     public username: string;
     public password: string;
 
-    constructor(private _sharedNavigationService: SharedNavigationService, private webService: WebService, private router: Router) { }
+    constructor(private _sharedNavigationService: SharedNavigationService, private webService: WebService, private router: Router, private _userService: UserService) { }
 
     Login() {
         var promise = this.webService.login(this.username, this.password);
@@ -25,8 +26,6 @@ export class LoginComponent {
             }
 
             Helpers.setSession(data.json());
-            this._sharedNavigationService.getMenuItems();
-
             this.router.navigate(['dashboard']);
         });
     }

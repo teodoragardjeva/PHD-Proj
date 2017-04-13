@@ -49,6 +49,10 @@ export class WebService {
         return this.getData(Configurations.serviceUrl + 'GetMenuElements?sessionKey=' + Helpers.getSession());
     }
 
+    getUserSettings() {
+        return this.getData(Configurations.serviceUrl + 'GetUserSettings?sessionKey=' + Helpers.getSession());
+    }
+
     getUsers() {
         return this.getData('../../data/users.json');
     }

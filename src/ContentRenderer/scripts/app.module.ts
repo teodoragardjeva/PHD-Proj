@@ -24,6 +24,7 @@ import { InputComponent } from './components/inputComponent';
 import { AuthGuard } from './helpers/authGuard';
 import { HttpModule } from '@angular/http';
 import { LoginComponent } from './components/login';
+import { UserService } from './services/userService';
 
 @NgModule({
     imports: [BrowserModule, FormsModule, Ng2PaginationModule, HttpModule,
@@ -40,7 +41,7 @@ import { LoginComponent } from './components/login';
 
         ])
     ],
-    providers: [ListResolver, WebService, TranslationService, SharedNavigationService, AuthGuard],
+    providers: [ListResolver, WebService, TranslationService, SharedNavigationService, AuthGuard, UserService],
     declarations: [TranslatePipe, FilterByFieldPipe, MasterLayoutComponent, MenuComponent, GridElement, UserProfile, FormsElement,
         Dashboard, TreeView, ListElement, MenuSubItemComponent, ExtendedFilter, InputComponent, LoginComponent],
     bootstrap: [MasterLayoutComponent],
