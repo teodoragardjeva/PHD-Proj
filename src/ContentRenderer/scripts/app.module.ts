@@ -14,8 +14,6 @@ import {EntityType} from './enums/entityTypes';
 import {ListResolver} from './helpers/listResolver';
 import {WebService} from './services/webService';
 import {TranslationService} from './services/translationService';
-import {TranslatePipe} from './pipes/translationPipe';
-import {FilterByFieldPipe} from './pipes/fieldFilterPipe';
 import {SharedNavigationService} from './services/sharedNavigationService';
 import { FormsModule } from '@angular/forms';
 import { Ng2PaginationModule } from 'ng2-pagination'; 
@@ -23,27 +21,32 @@ import { ExtendedFilter } from './components/extendedFilter';
 import { InputComponent } from './components/inputComponent';
 import { AuthGuard } from './helpers/authGuard';
 import { HttpModule } from '@angular/http';
-import { LoginComponent } from './components/login';
 import { UserService } from './services/userService';
+import { CommonModule } from './common.module';
+import { LoginComponent } from './components/login';
+import { SecuredMasterComponent } from './components/securedMasterComponent';
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, Ng2PaginationModule, HttpModule,
+    imports: [BrowserModule, FormsModule, Ng2PaginationModule, HttpModule, CommonModule,
         RouterModule.forRoot([
-            { path: 'grid-ui', component: ListElement, canActivate: [AuthGuard] },
-            { path: 'users', component: ListElement, data: { type: EntityType.User }, resolve: { items: ListResolver }, canActivate: [AuthGuard] },
-            { path: 'items/:navId/:type', component: ListElement, resolve: { items: ListResolver }, canActivate: [AuthGuard] },
-            { path: 'user-profile', component: UserProfile, canActivate: [AuthGuard] },
-            { path: 'forms-ui', component: FormsElement, canActivate: [AuthGuard] },
-            { path: 'dashboard', component: MenuComponent, canActivate: [AuthGuard] },
-            { path: '', component: MenuComponent, canActivate: [AuthGuard] },
-            { path: 'nav-item/:navId', component: MenuSubItemComponent, canActivate: [AuthGuard] },
-            { path: 'login', component: LoginComponent},
-
+            
+            {
+                path: '', component: SecuredMasterComponent, canActivate: [AuthGuard],
+                children: [
+                    { path: 'dashboard', component: MenuComponent, canActivate: [AuthGuard], },
+                    { path: 'grid-ui', component: ListElement, canActivate: [AuthGuard] },
+                    { path: 'users', component: ListElement, data: { type: EntityType.User }, resolve: { items: ListResolver }, canActivate: [AuthGuard] },
+                    { path: 'items/:navId/:type', component: ListElement, resolve: { items: ListResolver }, canActivate: [AuthGuard] },
+                    { path: 'user-profile', component: UserProfile, canActivate: [AuthGuard] },
+                    { path: 'forms-ui', component: FormsElement, canActivate: [AuthGuard] },]
+            },
+            { path: 'login', component: LoginComponent },
+            { path: 'nav-item/:navId', component: MenuSubItemComponent, canActivate: [AuthGuard] }
         ])
     ],
-    providers: [ListResolver, WebService, TranslationService, SharedNavigationService, AuthGuard, UserService],
-    declarations: [TranslatePipe, FilterByFieldPipe, MasterLayoutComponent, MenuComponent, GridElement, UserProfile, FormsElement,
-        Dashboard, TreeView, ListElement, MenuSubItemComponent, ExtendedFilter, InputComponent, LoginComponent],
+    providers: [ListResolver, WebService, SharedNavigationService, AuthGuard, UserService],
+    declarations: [MasterLayoutComponent, MenuComponent, GridElement, UserProfile, FormsElement,
+        Dashboard, TreeView, ListElement, LoginComponent, MenuSubItemComponent, ExtendedFilter, InputComponent, SecuredMasterComponent],
     bootstrap: [MasterLayoutComponent],
    
 })

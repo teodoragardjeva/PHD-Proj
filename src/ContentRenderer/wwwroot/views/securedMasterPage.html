@@ -1,0 +1,15 @@
+﻿<div id="page-wrapper">
+    <div class="padding-top-10">
+        <div *ngIf="_sharedNavigationService" class="navigation-history-container  margin-left-10">
+            <a [routerLink]="['/nav-item/' + navigationItem.Id]"
+               [ngClass]="{'navigation-category': i == _sharedNavigationService.navigationHistory.length - 1}"
+               *ngFor="let navigationItem of _sharedNavigationService.navigationHistory; let i = index">
+                {{navigationItem.Title}}
+                <span *ngIf="i !=  _sharedNavigationService.navigationHistory.length - 1" class="navigation-category text-decoration-none"> / </span>
+            </a>
+
+        </div>
+    </div>
+
+    <router-outlet></router-outlet>
+</div>
